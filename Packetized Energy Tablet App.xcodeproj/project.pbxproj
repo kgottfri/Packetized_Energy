@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A889724B1DB44A40002B2B03 /* graph.png in Resources */ = {isa = PBXBuildFile; fileRef = A889724A1DB44A40002B2B03 /* graph.png */; };
 		A8D630521DB430E800E43D4A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D630511DB430E800E43D4A /* AppDelegate.swift */; };
 		A8D630541DB430E800E43D4A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D630531DB430E800E43D4A /* ViewController.swift */; };
 		A8D630571DB430E800E43D4A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8D630551DB430E800E43D4A /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 		A8D6305F1DB430E800E43D4A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8D6305D1DB430E800E43D4A /* LaunchScreen.storyboard */; };
 		A8D6306A1DB430E900E43D4A /* Packetized_Energy_Tablet_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D630691DB430E900E43D4A /* Packetized_Energy_Tablet_AppTests.swift */; };
 		A8D630751DB430E900E43D4A /* Packetized_Energy_Tablet_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D630741DB430E900E43D4A /* Packetized_Energy_Tablet_AppUITests.swift */; };
+		A8D630831DB4315D00E43D4A /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = A8D630821DB4315D00E43D4A /* logo.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A889724A1DB44A40002B2B03 /* graph.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = graph.png; sourceTree = SOURCE_ROOT; };
 		A8D6304E1DB430E800E43D4A /* Packetized Energy Tablet App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Packetized Energy Tablet App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8D630511DB430E800E43D4A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A8D630531DB430E800E43D4A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +52,7 @@
 		A8D630701DB430E900E43D4A /* Packetized Energy Tablet AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Packetized Energy Tablet AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8D630741DB430E900E43D4A /* Packetized_Energy_Tablet_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Packetized_Energy_Tablet_AppUITests.swift; sourceTree = "<group>"; };
 		A8D630761DB430E900E43D4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A8D630821DB4315D00E43D4A /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,8 @@
 		A8D630501DB430E800E43D4A /* Packetized Energy Tablet App */ = {
 			isa = PBXGroup;
 			children = (
+				A889724A1DB44A40002B2B03 /* graph.png */,
+				A8D630821DB4315D00E43D4A /* logo.png */,
 				A8D630511DB430E800E43D4A /* AppDelegate.swift */,
 				A8D630531DB430E800E43D4A /* ViewController.swift */,
 				A8D630551DB430E800E43D4A /* Main.storyboard */,
@@ -232,9 +238,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8D630831DB4315D00E43D4A /* logo.png in Resources */,
 				A8D6305F1DB430E800E43D4A /* LaunchScreen.storyboard in Resources */,
 				A8D6305C1DB430E800E43D4A /* Assets.xcassets in Resources */,
 				A8D630571DB430E800E43D4A /* Main.storyboard in Resources */,
+				A889724B1DB44A40002B2B03 /* graph.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -488,6 +496,7 @@
 				A8D6307B1DB430E900E43D4A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A8D6307C1DB430E900E43D4A /* Build configuration list for PBXNativeTarget "Packetized Energy Tablet AppTests" */ = {
 			isa = XCConfigurationList;
@@ -496,6 +505,7 @@
 				A8D6307E1DB430E900E43D4A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A8D6307F1DB430E900E43D4A /* Build configuration list for PBXNativeTarget "Packetized Energy Tablet AppUITests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +514,7 @@
 				A8D630811DB430E900E43D4A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

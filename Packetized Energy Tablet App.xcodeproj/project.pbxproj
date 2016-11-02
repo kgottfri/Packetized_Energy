@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A83AACE91DB5664E000769B0 /* graphcopy.png in Resources */ = {isa = PBXBuildFile; fileRef = A83AACE81DB5664E000769B0 /* graphcopy.png */; };
 		A889724B1DB44A40002B2B03 /* graph.png in Resources */ = {isa = PBXBuildFile; fileRef = A889724A1DB44A40002B2B03 /* graph.png */; };
 		A8D630521DB430E800E43D4A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D630511DB430E800E43D4A /* AppDelegate.swift */; };
 		A8D630541DB430E800E43D4A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D630531DB430E800E43D4A /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 		A8D6306A1DB430E900E43D4A /* Packetized_Energy_Tablet_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D630691DB430E900E43D4A /* Packetized_Energy_Tablet_AppTests.swift */; };
 		A8D630751DB430E900E43D4A /* Packetized_Energy_Tablet_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D630741DB430E900E43D4A /* Packetized_Energy_Tablet_AppUITests.swift */; };
 		A8D630831DB4315D00E43D4A /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = A8D630821DB4315D00E43D4A /* logo.png */; };
+		A8EF7F4B1DB47C7400E27A76 /* windmill.png in Resources */ = {isa = PBXBuildFile; fileRef = A8EF7F4A1DB47C7400E27A76 /* windmill.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A83AACE81DB5664E000769B0 /* graphcopy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = graphcopy.png; sourceTree = SOURCE_ROOT; };
 		A889724A1DB44A40002B2B03 /* graph.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = graph.png; sourceTree = SOURCE_ROOT; };
 		A8D6304E1DB430E800E43D4A /* Packetized Energy Tablet App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Packetized Energy Tablet App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8D630511DB430E800E43D4A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +56,7 @@
 		A8D630741DB430E900E43D4A /* Packetized_Energy_Tablet_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Packetized_Energy_Tablet_AppUITests.swift; sourceTree = "<group>"; };
 		A8D630761DB430E900E43D4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A8D630821DB4315D00E43D4A /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = SOURCE_ROOT; };
+		A8EF7F4A1DB47C7400E27A76 /* windmill.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = windmill.png; path = ../../windmill.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,8 @@
 		A8D630501DB430E800E43D4A /* Packetized Energy Tablet App */ = {
 			isa = PBXGroup;
 			children = (
+				A83AACE81DB5664E000769B0 /* graphcopy.png */,
+				A8EF7F4A1DB47C7400E27A76 /* windmill.png */,
 				A889724A1DB44A40002B2B03 /* graph.png */,
 				A8D630821DB4315D00E43D4A /* logo.png */,
 				A8D630511DB430E800E43D4A /* AppDelegate.swift */,
@@ -197,18 +203,21 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Packetized Energy";
 				TargetAttributes = {
 					A8D6304D1DB430E800E43D4A = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 					};
 					A8D630641DB430E900E43D4A = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 						TestTargetID = A8D6304D1DB430E800E43D4A;
 					};
 					A8D6306F1DB430E900E43D4A = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 						TestTargetID = A8D6304D1DB430E800E43D4A;
 					};
 				};
@@ -239,10 +248,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				A8D630831DB4315D00E43D4A /* logo.png in Resources */,
+				A83AACE91DB5664E000769B0 /* graphcopy.png in Resources */,
 				A8D6305F1DB430E800E43D4A /* LaunchScreen.storyboard in Resources */,
 				A8D6305C1DB430E800E43D4A /* Assets.xcassets in Resources */,
 				A8D630571DB430E800E43D4A /* Main.storyboard in Resources */,
 				A889724B1DB44A40002B2B03 /* graph.png in Resources */,
+				A8EF7F4B1DB47C7400E27A76 /* windmill.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,8 +349,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -384,8 +397,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -404,6 +419,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = 2;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -417,6 +433,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "PE.Packetized-Energy-Tablet-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -428,6 +445,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "PE.Packetized-Energy-Tablet-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -439,6 +457,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "PE.Packetized-Energy-Tablet-AppTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Packetized Energy Tablet App.app/Packetized Energy Tablet App";
 			};
 			name = Debug;
@@ -451,6 +470,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "PE.Packetized-Energy-Tablet-AppTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Packetized Energy Tablet App.app/Packetized Energy Tablet App";
 			};
 			name = Release;
@@ -462,6 +482,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "PE.Packetized-Energy-Tablet-AppUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = "Packetized Energy Tablet App";
 			};
 			name = Debug;
@@ -473,6 +494,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "PE.Packetized-Energy-Tablet-AppUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = "Packetized Energy Tablet App";
 			};
 			name = Release;

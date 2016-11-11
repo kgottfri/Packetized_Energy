@@ -1,3 +1,4 @@
+
 //
 //  ConnectViewController.swift
 //  Packetized Energy Tablet App
@@ -5,7 +6,6 @@
 //  Created by Alex Beard on 11/10/16.
 //  Copyright © 2016 Packetized Energy. All rights reserved.
 //
-
 import UIKit
 
 class ConnectViewController: UIViewController {
@@ -22,7 +22,7 @@ class ConnectViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
     
-
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -69,8 +69,10 @@ class ConnectViewController: UIViewController {
         
     }
     
-
+    
 }
+
+
     
 
 

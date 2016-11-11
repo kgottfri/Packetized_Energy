@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A83AACE91DB5664E000769B0 /* graphcopy.png in Resources */ = {isa = PBXBuildFile; fileRef = A83AACE81DB5664E000769B0 /* graphcopy.png */; };
+		69F888861DD506110083719F /* ConnectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F888851DD506110083719F /* ConnectViewController.swift */; };
+		A83AACE91DB5664E000769B0 /* graph.png in Resources */ = {isa = PBXBuildFile; fileRef = A83AACE81DB5664E000769B0 /* graph.png */; };
 		A889724B1DB44A40002B2B03 /* graph.png in Resources */ = {isa = PBXBuildFile; fileRef = A889724A1DB44A40002B2B03 /* graph.png */; };
 		A88CD2451DD55214005C04EE /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A88CD2401DD551F3005C04EE /* Charts.framework */; };
 		A88CD2461DD55214005C04EE /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A88CD2401DD551F3005C04EE /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -20,7 +21,6 @@
 		A8D6306A1DB430E900E43D4A /* Packetized_Energy_Tablet_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D630691DB430E900E43D4A /* Packetized_Energy_Tablet_AppTests.swift */; };
 		A8D630751DB430E900E43D4A /* Packetized_Energy_Tablet_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D630741DB430E900E43D4A /* Packetized_Energy_Tablet_AppUITests.swift */; };
 		A8D630831DB4315D00E43D4A /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = A8D630821DB4315D00E43D4A /* logo.png */; };
-		A8EF7F4B1DB47C7400E27A76 /* windmill.png in Resources */ = {isa = PBXBuildFile; fileRef = A8EF7F4A1DB47C7400E27A76 /* windmill.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,7 +83,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		A83AACE81DB5664E000769B0 /* graphcopy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = graphcopy.png; sourceTree = SOURCE_ROOT; };
+		69F888851DD506110083719F /* ConnectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectViewController.swift; sourceTree = "<group>"; };
+		A83AACE81DB5664E000769B0 /* graph.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = graph.png; sourceTree = SOURCE_ROOT; };
 		A889724A1DB44A40002B2B03 /* graph.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = graph.png; sourceTree = SOURCE_ROOT; };
 		A88CD2391DD551F3005C04EE /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "../../../../Downloads/Charts-master/Charts.xcodeproj"; sourceTree = "<group>"; };
 		A8D6304E1DB430E800E43D4A /* Packetized Energy Tablet App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Packetized Energy Tablet App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -101,7 +102,6 @@
 		A8D630741DB430E900E43D4A /* Packetized_Energy_Tablet_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Packetized_Energy_Tablet_AppUITests.swift; sourceTree = "<group>"; };
 		A8D630761DB430E900E43D4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A8D630821DB4315D00E43D4A /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = SOURCE_ROOT; };
-		A8EF7F4A1DB47C7400E27A76 /* windmill.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = windmill.png; path = ../../windmill.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,12 +164,12 @@
 		A8D630501DB430E800E43D4A /* Packetized Energy Tablet App */ = {
 			isa = PBXGroup;
 			children = (
-				A83AACE81DB5664E000769B0 /* graphcopy.png */,
-				A8EF7F4A1DB47C7400E27A76 /* windmill.png */,
+				A83AACE81DB5664E000769B0 /* graph.png */,
 				A889724A1DB44A40002B2B03 /* graph.png */,
 				A8D630821DB4315D00E43D4A /* logo.png */,
 				A8D630511DB430E800E43D4A /* AppDelegate.swift */,
 				A8D630531DB430E800E43D4A /* ViewController.swift */,
+				69F888851DD506110083719F /* ConnectViewController.swift */,
 				A8D630551DB430E800E43D4A /* Main.storyboard */,
 				A8D6305B1DB430E800E43D4A /* Assets.xcassets */,
 				A8D6305D1DB430E800E43D4A /* LaunchScreen.storyboard */,
@@ -337,12 +337,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				A8D630831DB4315D00E43D4A /* logo.png in Resources */,
-				A83AACE91DB5664E000769B0 /* graphcopy.png in Resources */,
+				A83AACE91DB5664E000769B0 /* graph.png in Resources */,
 				A8D6305F1DB430E800E43D4A /* LaunchScreen.storyboard in Resources */,
 				A8D6305C1DB430E800E43D4A /* Assets.xcassets in Resources */,
 				A8D630571DB430E800E43D4A /* Main.storyboard in Resources */,
 				A889724B1DB44A40002B2B03 /* graph.png in Resources */,
-				A8EF7F4B1DB47C7400E27A76 /* windmill.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,6 +369,7 @@
 				A8D630541DB430E800E43D4A /* ViewController.swift in Sources */,
 				A8D6305A1DB430E800E43D4A /* Packetized_Energy_Tablet_App.xcdatamodeld in Sources */,
 				A8D630521DB430E800E43D4A /* AppDelegate.swift in Sources */,
+				69F888861DD506110083719F /* ConnectViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

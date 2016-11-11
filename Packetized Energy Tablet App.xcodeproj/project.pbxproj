@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		A83AACE91DB5664E000769B0 /* graphcopy.png in Resources */ = {isa = PBXBuildFile; fileRef = A83AACE81DB5664E000769B0 /* graphcopy.png */; };
 		A889724B1DB44A40002B2B03 /* graph.png in Resources */ = {isa = PBXBuildFile; fileRef = A889724A1DB44A40002B2B03 /* graph.png */; };
+		A88CD2451DD55214005C04EE /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A88CD2401DD551F3005C04EE /* Charts.framework */; };
+		A88CD2461DD55214005C04EE /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A88CD2401DD551F3005C04EE /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A8D630521DB430E800E43D4A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D630511DB430E800E43D4A /* AppDelegate.swift */; };
 		A8D630541DB430E800E43D4A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D630531DB430E800E43D4A /* ViewController.swift */; };
 		A8D630571DB430E800E43D4A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8D630551DB430E800E43D4A /* Main.storyboard */; };
@@ -22,6 +24,34 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		A88CD23F1DD551F3005C04EE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A88CD2391DD551F3005C04EE /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 06165F241D8110E600722320;
+			remoteInfo = Charts;
+		};
+		A88CD2411DD551F3005C04EE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A88CD2391DD551F3005C04EE /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 06B120D51D811E6200D14B02;
+			remoteInfo = ChartsRealm;
+		};
+		A88CD2431DD551F3005C04EE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A88CD2391DD551F3005C04EE /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 06165F2E1D8110E600722320;
+			remoteInfo = ChartsTests;
+		};
+		A88CD2471DD55214005C04EE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A88CD2391DD551F3005C04EE /* Charts.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 06165F231D8110E600722320;
+			remoteInfo = Charts;
+		};
 		A8D630661DB430E900E43D4A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A8D630461DB430E800E43D4A /* Project object */;
@@ -38,9 +68,24 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		A88CD2491DD55214005C04EE /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A88CD2461DD55214005C04EE /* Charts.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		A83AACE81DB5664E000769B0 /* graphcopy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = graphcopy.png; sourceTree = SOURCE_ROOT; };
 		A889724A1DB44A40002B2B03 /* graph.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = graph.png; sourceTree = SOURCE_ROOT; };
+		A88CD2391DD551F3005C04EE /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "../../../../Downloads/Charts-master/Charts.xcodeproj"; sourceTree = "<group>"; };
 		A8D6304E1DB430E800E43D4A /* Packetized Energy Tablet App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Packetized Energy Tablet App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8D630511DB430E800E43D4A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A8D630531DB430E800E43D4A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -64,6 +109,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A88CD2451DD55214005C04EE /* Charts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,9 +130,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A88CD23A1DD551F3005C04EE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A88CD2401DD551F3005C04EE /* Charts.framework */,
+				A88CD2421DD551F3005C04EE /* ChartsRealm.framework */,
+				A88CD2441DD551F3005C04EE /* ChartsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		A8D630451DB430E800E43D4A = {
 			isa = PBXGroup;
 			children = (
+				A88CD2391DD551F3005C04EE /* Charts.xcodeproj */,
 				A8D630501DB430E800E43D4A /* Packetized Energy Tablet App */,
 				A8D630681DB430E900E43D4A /* Packetized Energy Tablet AppTests */,
 				A8D630731DB430E900E43D4A /* Packetized Energy Tablet AppUITests */,
@@ -150,10 +207,12 @@
 				A8D6304A1DB430E800E43D4A /* Sources */,
 				A8D6304B1DB430E800E43D4A /* Frameworks */,
 				A8D6304C1DB430E800E43D4A /* Resources */,
+				A88CD2491DD55214005C04EE /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				A88CD2481DD55214005C04EE /* PBXTargetDependency */,
 			);
 			name = "Packetized Energy Tablet App";
 			productName = "Packetized Energy Tablet App";
@@ -233,6 +292,12 @@
 			mainGroup = A8D630451DB430E800E43D4A;
 			productRefGroup = A8D6304F1DB430E800E43D4A /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = A88CD23A1DD551F3005C04EE /* Products */;
+					ProjectRef = A88CD2391DD551F3005C04EE /* Charts.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				A8D6304D1DB430E800E43D4A /* Packetized Energy Tablet App */,
@@ -241,6 +306,30 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		A88CD2401DD551F3005C04EE /* Charts.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Charts.framework;
+			remoteRef = A88CD23F1DD551F3005C04EE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A88CD2421DD551F3005C04EE /* ChartsRealm.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ChartsRealm.framework;
+			remoteRef = A88CD2411DD551F3005C04EE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A88CD2441DD551F3005C04EE /* ChartsTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ChartsTests.xctest;
+			remoteRef = A88CD2431DD551F3005C04EE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		A8D6304C1DB430E800E43D4A /* Resources */ = {
@@ -303,6 +392,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		A88CD2481DD55214005C04EE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Charts;
+			targetProxy = A88CD2471DD55214005C04EE /* PBXContainerItemProxy */;
+		};
 		A8D630671DB430E900E43D4A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = A8D6304D1DB430E800E43D4A /* Packetized Energy Tablet App */;
@@ -428,6 +522,7 @@
 		A8D6307A1DB430E900E43D4A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Packetized Energy Tablet App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -440,6 +535,7 @@
 		A8D6307B1DB430E900E43D4A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Packetized Energy Tablet App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

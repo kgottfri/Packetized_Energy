@@ -18,24 +18,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Welcome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e8u-MT-ZGJ">
-                                <frame key="frameInset" minX="419" minY="154" width="187" height="63"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e8u-MT-ZGJ">
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="RrZ-n9-PlV">
-                                <frame key="frameInset" minX="257" minY="288" width="80" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="P7X-sY-QWW">
-                                        <frame key="frameInset" width="80" height="50"/>
-                                    </stackView>
-                                </subviews>
-                            </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TI7-cW-6wI">
-                                <frame key="frameInset" minX="489" minY="422" width="46" height="30"/>
-                                <state key="normal" title="About"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TI7-cW-6wI">
+                                <state key="normal" title="About Packetized Energy"/>
                                 <connections>
                                     <segue destination="OeC-8q-YLv" kind="presentation" identifier="toHelp" id="hPB-uA-2Qb"/>
                                 </connections>
@@ -44,13 +33,7 @@
                                 <frame key="frameInset" minX="10" minY="20" width="134" height="67"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="windmill.png" translatesAutoresizingMaskIntoConstraints="NO" id="6qK-Yg-L3C">
-                                <frame key="frameInset" minX="392" minY="539" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IoT-K8-iOv">
-                                <frame key="frameInset" minX="472" minY="288" width="80" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IoT-K8-iOv">
                                 <color key="backgroundColor" red="0.95691105769230766" green="0.32889506795088147" blue="0.19160954173109529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Get Started"/>
                                 <connections>
@@ -64,10 +47,22 @@
                                     <segue destination="jTx-FY-f2l" kind="presentation" identifier="toHelp" id="icc-gh-wKQ"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="windmill.png" translatesAutoresizingMaskIntoConstraints="NO" id="6qK-Yg-L3C">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="SoM-Xe-QqU"/>
+                                    <constraint firstAttribute="height" constant="128" id="ijC-Lt-ied"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="TI7-cW-6wI" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="422" id="DF8-4V-Mm8"/>
+                            <constraint firstItem="IoT-K8-iOv" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="288" id="KfX-yI-NzB"/>
+                            <constraint firstItem="6qK-Yg-L3C" firstAttribute="top" secondItem="TI7-cW-6wI" secondAttribute="bottom" constant="66" id="MNv-ik-hdD"/>
                             <constraint firstItem="e8u-MT-ZGJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NHr-hz-GfI"/>
+                            <constraint firstItem="IoT-K8-iOv" firstAttribute="top" secondItem="e8u-MT-ZGJ" secondAttribute="bottom" constant="71" id="Ybn-zx-uk1"/>
+                            <constraint firstItem="6qK-Yg-L3C" firstAttribute="centerX" secondItem="TI7-cW-6wI" secondAttribute="centerX" id="fWD-68-SPU"/>
+                            <constraint firstItem="TI7-cW-6wI" firstAttribute="centerX" secondItem="IoT-K8-iOv" secondAttribute="centerX" id="mgD-H2-Yw5"/>
                             <constraint firstItem="TI7-cW-6wI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rxK-ic-fxG"/>
                         </constraints>
                     </view>
@@ -190,12 +185,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="mPw-iJ-9Mq">
-                                <frame key="frameInset" minX="446" minY="558" width="106" height="46"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="mPw-iJ-9Mq">
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lHI-W5-2OT">
-                                        <frame key="frameInset" width="106" height="46"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lHI-W5-2OT">
                                         <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                         <state key="normal" title="Connect"/>
                                         <connections>
@@ -203,6 +195,9 @@
                                         </connections>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="lHI-W5-2OT" firstAttribute="centerX" secondItem="mPw-iJ-9Mq" secondAttribute="centerX" id="z08-Dj-h0y"/>
+                                </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="I.P. Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Api-lg-JUd">
                                 <frame key="frameInset" minX="127" minY="235" width="206" height="48"/>
@@ -232,7 +227,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Please Connect to the Device" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j5g-UC-Mys">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Please Connect to the Server" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j5g-UC-Mys">
                                 <frame key="frameInset" minX="262" minY="74" width="501" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
@@ -241,6 +236,10 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="cq0-tb-t7Z" firstAttribute="top" secondItem="mPw-iJ-9Mq" secondAttribute="bottom" constant="164" id="Ihz-zg-eIm"/>
+                            <constraint firstItem="mPw-iJ-9Mq" firstAttribute="leading" secondItem="BnJ-hi-fF5" secondAttribute="leading" constant="446" id="XGb-ho-2q6"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DGE-En-fhs" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -414,7 +413,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="0VJ-zg-H8N"/>
-        <segue reference="NFz-Rx-fqV"/>
+        <segue reference="9Gy-Qz-1F9"/>
         <segue reference="R29-m9-697"/>
     </inferredMetricsTieBreakers>
 </document>

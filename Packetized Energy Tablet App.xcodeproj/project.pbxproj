@@ -13,6 +13,7 @@
 		A88CD2451DD55214005C04EE /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A88CD2401DD551F3005C04EE /* Charts.framework */; };
 		A88CD2461DD55214005C04EE /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A88CD2401DD551F3005C04EE /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A88CD24C1DD55A3F005C04EE /* Chart.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88CD24B1DD55A3F005C04EE /* Chart.swift */; };
+		A88CD2511DD5658A005C04EE /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88CD2501DD5658A005C04EE /* GraphViewController.swift */; };
 		A8D630521DB430E800E43D4A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D630511DB430E800E43D4A /* AppDelegate.swift */; };
 		A8D630541DB430E800E43D4A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D630531DB430E800E43D4A /* ViewController.swift */; };
 		A8D630571DB430E800E43D4A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8D630551DB430E800E43D4A /* Main.storyboard */; };
@@ -89,6 +90,7 @@
 		A889724A1DB44A40002B2B03 /* graph.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = graph.png; sourceTree = SOURCE_ROOT; };
 		A88CD2391DD551F3005C04EE /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "../../../../Downloads/Charts-master/Charts.xcodeproj"; sourceTree = "<group>"; };
 		A88CD24B1DD55A3F005C04EE /* Chart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chart.swift; sourceTree = "<group>"; };
+		A88CD2501DD5658A005C04EE /* GraphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphViewController.swift; sourceTree = "<group>"; };
 		A8D6304E1DB430E800E43D4A /* Packetized Energy Tablet App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Packetized Energy Tablet App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8D630511DB430E800E43D4A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A8D630531DB430E800E43D4A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 				A8D630601DB430E800E43D4A /* Info.plist */,
 				A8D630581DB430E800E43D4A /* Packetized_Energy_Tablet_App.xcdatamodeld */,
 				A88CD24B1DD55A3F005C04EE /* Chart.swift */,
+				A88CD2501DD5658A005C04EE /* GraphViewController.swift */,
 			);
 			path = "Packetized Energy Tablet App";
 			sourceTree = "<group>";
@@ -372,6 +375,7 @@
 				A88CD24C1DD55A3F005C04EE /* Chart.swift in Sources */,
 				A8D630541DB430E800E43D4A /* ViewController.swift in Sources */,
 				A8D6305A1DB430E800E43D4A /* Packetized_Energy_Tablet_App.xcdatamodeld in Sources */,
+				A88CD2511DD5658A005C04EE /* GraphViewController.swift in Sources */,
 				A8D630521DB430E800E43D4A /* AppDelegate.swift in Sources */,
 				69F888861DD506110083719F /* ConnectViewController.swift in Sources */,
 			);

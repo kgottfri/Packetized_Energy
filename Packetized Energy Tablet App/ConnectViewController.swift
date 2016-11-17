@@ -59,6 +59,9 @@ class ConnectViewController: UIViewController {
                 
                 self.performSegue(withIdentifier: "ConnectSegue", sender: nil)
             }
+            else {
+                ViewController().errorMessage(message: "Can not connect to the server")
+            }
             
             
             //print("responseString = \(responseString!)")

@@ -257,7 +257,7 @@
         <!--Graph-->
         <scene sceneID="dUH-pu-isy">
             <objects>
-                <viewController title="Graph" wantsFullScreenLayout="YES" modalPresentationStyle="currentContext" id="y4P-Ib-A4B" sceneMemberID="viewController">
+                <viewController title="Graph" wantsFullScreenLayout="YES" modalPresentationStyle="currentContext" id="y4P-Ib-A4B" customClass="GraphViewController" customModule="Packetized_Energy_Tablet_App" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="WwA-jO-y0Q"/>
                         <viewControllerLayoutGuide type="bottom" id="ZmG-Or-VsG"/>
@@ -294,10 +294,6 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="graph.png" translatesAutoresizingMaskIntoConstraints="NO" id="n3M-0y-vTe">
-                                <frame key="frameInset" minY="301" width="1000" height="404"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Start Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="715-F8-Inm">
                                 <frame key="frameInset" minX="603" minY="178" width="93" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -348,13 +344,30 @@
                                     <color key="titleColor" red="0.0" green="0.81542467948717945" blue="0.090317105667412412" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dHV-w3-KlT" customClass="Chart" customModule="Packetized_Energy_Tablet_App" customModuleProvider="target">
+                                <frame key="frameInset" minX="114" minY="398" width="790" height="262"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hZS-RD-BfH">
+                                <frame key="frameInset" minX="49" minY="104" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="Start" destination="tFB-hc-Kjv" id="VDu-jo-1U1"/>
+                        <outlet property="graphView" destination="dHV-w3-KlT" id="VLL-YQ-21x"/>
+                        <outlet property="tfField" destination="hZS-RD-BfH" id="3Qt-3R-Q28"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rba-ST-k7i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1110" y="614"/>
+            <point key="canvasLocation" x="1109.765625" y="613.28125"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="elm-t3-EII">
@@ -415,12 +428,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="graph.png" width="1457" height="604"/>
         <image name="logo.png" width="606" height="378"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="icc-gh-wKQ"/>
         <segue reference="TU8-mV-2b2"/>
+        <segue reference="MHx-oN-C0b"/>
         <segue reference="k5v-a1-PRa"/>
     </inferredMetricsTieBreakers>
 </document>

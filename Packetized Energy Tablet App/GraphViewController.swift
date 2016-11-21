@@ -16,6 +16,8 @@ class GraphViewController: UIViewController {
     var red:CGFloat!
     var green:CGFloat!
     var blue:CGFloat!
+    let data = [2.3, 4.4, 5.6, 1.3, 2.2]
+    var float = 0
     
     @IBOutlet var imageView: UIImageView!
     @IBOutlet weak var Start: UIButton!
@@ -51,13 +53,17 @@ class GraphViewController: UIViewController {
         
         isSwiping = true;
         if let touch = touches.first{
-            let currentPoint = touch.location(in: imageView)
+            
+            var currentPoint = touch.location(in: imageView)
+            if (currentPoint.x < lastPoint.x){
+                currentPoint.x = lastPoint.x
+            }
             UIGraphicsBeginImageContext(self.imageView.frame.size)
             self.imageView.image?.draw(in: CGRect(x: 0, y: 0, width: self.imageView.frame.size.width, height: self.imageView.frame.size.height))
             UIGraphicsGetCurrentContext()?.move(to: CGPoint(x: lastPoint.x, y: lastPoint.y))
             UIGraphicsGetCurrentContext()?.addLine(to: CGPoint(x: currentPoint.x, y: currentPoint.y))
-            UIGraphicsGetCurrentContext()?.setLineCap(CGLineCap.round)
-            UIGraphicsGetCurrentContext()?.setLineWidth(9.0)
+            UIGraphicsGetCurrentContext()?.setLineCap(CGLineCap.square)
+            UIGraphicsGetCurrentContext()?.setLineWidth(2.0)
             UIGraphicsGetCurrentContext()?.setStrokeColor(red: red, green: green, blue: blue, alpha: 1.0)
             UIGraphicsGetCurrentContext()?.strokePath()
             self.imageView.image = UIGraphicsGetImageFromCurrentImageContext()
@@ -73,7 +79,7 @@ class GraphViewController: UIViewController {
             UIGraphicsBeginImageContext(self.imageView.frame.size)
             self.imageView.image?.draw(in: CGRect(x: 0, y: 0, width: self.imageView.frame.size.width, height: self.imageView.frame.size.height))
             UIGraphicsGetCurrentContext()?.setLineCap(CGLineCap.round)
-            UIGraphicsGetCurrentContext()?.setLineWidth(9.0)
+            UIGraphicsGetCurrentContext()?.setLineWidth(2.0)
             UIGraphicsGetCurrentContext()?.setStrokeColor(red: red, green: green, blue: blue, alpha: 1.0)
             UIGraphicsGetCurrentContext()?.move(to: CGPoint(x: lastPoint.x, y: lastPoint.y))
             UIGraphicsGetCurrentContext()?.addLine(to: CGPoint(x: lastPoint.x, y: lastPoint.y))
@@ -82,5 +88,14 @@ class GraphViewController: UIViewController {
             UIGraphicsEndImageContext()
         }
     }
+    
+//    func DrawData(_ ){
+//        UIGraphicsBeginImageContext(self.imageView.frame.size)
+//        
+//        for count in 1...5{
+//            UIGraphicsGetCurrentContext()?.move(to: CGPoint(x: (count - 1: float), y: (data[count-1]: float)))
+//            UIGraphicsGetCurrentContext()?.addLine(to: CGPoint(x: count, y: data[count]))
+//        }
+//    }
 
 }

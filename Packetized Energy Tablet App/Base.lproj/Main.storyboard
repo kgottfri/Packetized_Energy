@@ -345,7 +345,7 @@
                                 </state>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CmY-bJ-GdQ">
-                                <frame key="frameInset" minX="40" minY="163" width="960" height="597"/>
+                                <frame key="frameInset" minX="40" minY="159" width="960" height="600"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>

@@ -22,24 +22,5 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func errorMessage(message: String){
-        
-        let alert = UIAlertController(title:"Alert", message: message, preferredStyle: UIAlertControllerStyle.alert )
-        var okAction: UIAlertAction
-        
-        okAction = UIAlertAction(title:"OK", style: UIAlertActionStyle.default, handler:nil)
-        
-        alert.addAction(okAction)
-        
-        self.present(alert,animated: true,completion: nil)
-        
-        
-        
-    }
-    
-    
- 
-
 
 }
-

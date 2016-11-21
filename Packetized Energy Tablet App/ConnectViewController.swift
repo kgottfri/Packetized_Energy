@@ -31,19 +31,22 @@ class ConnectViewController: UIViewController {
     
     @IBAction func ConnectButtonPressed(_ sender: Any) {
         
+        let ip = self.ip_address.text
+        let port = self.port_number.text
         //initialize connection (using inputted IP address and port number)
-        var request = URLRequest(url: URL(string: "http://" + ip_address.text! + ":" + port_number.text!)!)
+        let urlStr : String = "http://" + ip! + ":" + port!
+        let url = URL(string : urlStr)
+        var request = URLRequest(url: url!)
         
-        
-        //POST code (not working yet)
-        request.httpMethod = "POST"
-        let postString = "THISISATEST"
-        request.httpBody = postString.data(using: .utf8)
+//        //POST code (not working yet)
+//        request.httpMethod = "POST"
+//        let postString = "THISISATEST"
+//        request.httpBody = postString.data(using: .utf8)
         
         //get code (recieves "confirmed" from server):
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data, error == nil else {   // check for fundamental networking error
-                print("error=\(error)")
+                self.errorMessage(message: "Can not connect to the server", segue: false)
                 return
             }
             
@@ -55,12 +58,13 @@ class ConnectViewController: UIViewController {
             self.serverConfirmation = String(data: data, encoding: .utf8)!
             
             //go to next screen if serverConfirmation = "confirmed"
-            if self.serverConfirmation == "confirmed" {
+            if self.serverConfirmation != "confirmed" {
                 
-                self.performSegue(withIdentifier: "ConnectSegue", sender: nil)
+                
             }
             else {
-                ViewController().errorMessage(message: "Can not connect to the server")
+                
+                self.performSegue(withIdentifier: "ConnectSegue", sender: nil)
             }
             
             
@@ -72,7 +76,25 @@ class ConnectViewController: UIViewController {
         
     }
     
-    
+    func errorMessage(message: String, segue: Bool){
+        
+        let alert = UIAlertController(title:"Alert", message: message, preferredStyle: UIAlertControllerStyle.alert )
+        var okAction: UIAlertAction
+        
+        if segue {
+            okAction = UIAlertAction(title:"OK", style: UIAlertActionStyle.default,  handler: { action in self.performSegue(withIdentifier: "ConnectSegue", sender: self)} )
+        }
+        else{
+            okAction = UIAlertAction(title:"OK", style: UIAlertActionStyle.default, handler:nil)
+        }
+        
+        alert.addAction(okAction)
+        
+        self.present(alert,animated: true,completion: nil)
+        
+        
+        
+    }
 }
 
 

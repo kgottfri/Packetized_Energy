@@ -17,7 +17,7 @@ class GraphViewController: UIViewController {
     var green:CGFloat!
     var blue:CGFloat!
     let data = [2.3, 4.4, 5.6, 1.3, 2.2]
-    var float = 0
+    var count = 0
     
     @IBOutlet var imageView: UIImageView!
     @IBOutlet weak var Start: UIButton!
@@ -40,6 +40,15 @@ class GraphViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    // The reset button for the graph
+    
+    @IBAction func undoDrawing(_ sender: AnyObject) {
+        self.imageView.image = nil
+        lastPoint = nil
+        
+    }
+    
+    // Creates a data point when the user first touches the screen
     override func touchesBegan(_ touches: Set<UITouch>,
                                with event: UIEvent?){
         isSwiping    = false
@@ -48,6 +57,8 @@ class GraphViewController: UIViewController {
         }
     }
     
+    //If the finger is still on the screen, the user will start to draw a line
+    //The user will draw a continuous line in the x direction as long as
     override func touchesMoved(_ touches: Set<UITouch>,
                                with event: UIEvent?){
         
@@ -86,6 +97,7 @@ class GraphViewController: UIViewController {
             UIGraphicsGetCurrentContext()?.strokePath()
             self.imageView.image = UIGraphicsGetImageFromCurrentImageContext()
             UIGraphicsEndImageContext()
+            
         }
     }
     

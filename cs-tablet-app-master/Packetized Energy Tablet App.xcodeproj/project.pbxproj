@@ -1,0 +1,589 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1E09809B1DF1C9B1005CB4D5 /* appGraph.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E09809A1DF1C9B1005CB4D5 /* appGraph.png */; };
+		69F888861DD506110083719F /* ConnectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F888851DD506110083719F /* ConnectViewController.swift */; };
+		A8267BD21DE3562F00E82522 /* Draw.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8267BD11DE3562F00E82522 /* Draw.swift */; };
+		A83AACE91DB5664E000769B0 /* graph.png in Resources */ = {isa = PBXBuildFile; fileRef = A83AACE81DB5664E000769B0 /* graph.png */; };
+		A889724B1DB44A40002B2B03 /* graph.png in Resources */ = {isa = PBXBuildFile; fileRef = A889724A1DB44A40002B2B03 /* graph.png */; };
+		A88CD24C1DD55A3F005C04EE /* Chart.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88CD24B1DD55A3F005C04EE /* Chart.swift */; };
+		A88CD2511DD5658A005C04EE /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88CD2501DD5658A005C04EE /* GraphViewController.swift */; };
+		A8D630521DB430E800E43D4A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D630511DB430E800E43D4A /* AppDelegate.swift */; };
+		A8D630541DB430E800E43D4A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D630531DB430E800E43D4A /* ViewController.swift */; };
+		A8D630571DB430E800E43D4A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8D630551DB430E800E43D4A /* Main.storyboard */; };
+		A8D6305A1DB430E800E43D4A /* Packetized_Energy_Tablet_App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A8D630581DB430E800E43D4A /* Packetized_Energy_Tablet_App.xcdatamodeld */; };
+		A8D6305C1DB430E800E43D4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8D6305B1DB430E800E43D4A /* Assets.xcassets */; };
+		A8D6305F1DB430E800E43D4A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8D6305D1DB430E800E43D4A /* LaunchScreen.storyboard */; };
+		A8D6306A1DB430E900E43D4A /* Packetized_Energy_Tablet_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D630691DB430E900E43D4A /* Packetized_Energy_Tablet_AppTests.swift */; };
+		A8D630751DB430E900E43D4A /* Packetized_Energy_Tablet_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D630741DB430E900E43D4A /* Packetized_Energy_Tablet_AppUITests.swift */; };
+		A8D630831DB4315D00E43D4A /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = A8D630821DB4315D00E43D4A /* logo.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A8D630661DB430E900E43D4A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A8D630461DB430E800E43D4A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A8D6304D1DB430E800E43D4A;
+			remoteInfo = "Packetized Energy Tablet App";
+		};
+		A8D630711DB430E900E43D4A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A8D630461DB430E800E43D4A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A8D6304D1DB430E800E43D4A;
+			remoteInfo = "Packetized Energy Tablet App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A88CD2491DD55214005C04EE /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		1E09809A1DF1C9B1005CB4D5 /* appGraph.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = appGraph.png; path = ../../../Pictures/appGraph.png; sourceTree = "<group>"; };
+		69F888851DD506110083719F /* ConnectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectViewController.swift; sourceTree = "<group>"; };
+		A8267BD11DE3562F00E82522 /* Draw.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Draw.swift; sourceTree = "<group>"; };
+		A83AACE81DB5664E000769B0 /* graph.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = graph.png; sourceTree = SOURCE_ROOT; };
+		A889724A1DB44A40002B2B03 /* graph.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = graph.png; sourceTree = SOURCE_ROOT; };
+		A88CD24B1DD55A3F005C04EE /* Chart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chart.swift; sourceTree = "<group>"; };
+		A88CD2501DD5658A005C04EE /* GraphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphViewController.swift; sourceTree = "<group>"; };
+		A8D6304E1DB430E800E43D4A /* Packetized Energy Tablet App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Packetized Energy Tablet App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A8D630511DB430E800E43D4A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A8D630531DB430E800E43D4A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A8D630561DB430E800E43D4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A8D630591DB430E800E43D4A /* Packetized_Energy_Tablet_App.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Packetized_Energy_Tablet_App.xcdatamodel; sourceTree = "<group>"; };
+		A8D6305B1DB430E800E43D4A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A8D6305E1DB430E800E43D4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A8D630601DB430E800E43D4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A8D630651DB430E900E43D4A /* Packetized Energy Tablet AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Packetized Energy Tablet AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A8D630691DB430E900E43D4A /* Packetized_Energy_Tablet_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Packetized_Energy_Tablet_AppTests.swift; sourceTree = "<group>"; };
+		A8D6306B1DB430E900E43D4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A8D630701DB430E900E43D4A /* Packetized Energy Tablet AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Packetized Energy Tablet AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A8D630741DB430E900E43D4A /* Packetized_Energy_Tablet_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Packetized_Energy_Tablet_AppUITests.swift; sourceTree = "<group>"; };
+		A8D630761DB430E900E43D4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A8D630821DB4315D00E43D4A /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A8D6304B1DB430E800E43D4A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A8D630621DB430E900E43D4A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A8D6306D1DB430E900E43D4A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A8D630451DB430E800E43D4A = {
+			isa = PBXGroup;
+			children = (
+				A8D630501DB430E800E43D4A /* Packetized Energy Tablet App */,
+				A8D630681DB430E900E43D4A /* Packetized Energy Tablet AppTests */,
+				A8D630731DB430E900E43D4A /* Packetized Energy Tablet AppUITests */,
+				A8D6304F1DB430E800E43D4A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A8D6304F1DB430E800E43D4A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A8D6304E1DB430E800E43D4A /* Packetized Energy Tablet App.app */,
+				A8D630651DB430E900E43D4A /* Packetized Energy Tablet AppTests.xctest */,
+				A8D630701DB430E900E43D4A /* Packetized Energy Tablet AppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A8D630501DB430E800E43D4A /* Packetized Energy Tablet App */ = {
+			isa = PBXGroup;
+			children = (
+				1E09809A1DF1C9B1005CB4D5 /* appGraph.png */,
+				A83AACE81DB5664E000769B0 /* graph.png */,
+				A889724A1DB44A40002B2B03 /* graph.png */,
+				A8D630821DB4315D00E43D4A /* logo.png */,
+				A8D630511DB430E800E43D4A /* AppDelegate.swift */,
+				A8D630531DB430E800E43D4A /* ViewController.swift */,
+				69F888851DD506110083719F /* ConnectViewController.swift */,
+				A8D630551DB430E800E43D4A /* Main.storyboard */,
+				A8267BD11DE3562F00E82522 /* Draw.swift */,
+				A8D6305B1DB430E800E43D4A /* Assets.xcassets */,
+				A8D6305D1DB430E800E43D4A /* LaunchScreen.storyboard */,
+				A8D630601DB430E800E43D4A /* Info.plist */,
+				A8D630581DB430E800E43D4A /* Packetized_Energy_Tablet_App.xcdatamodeld */,
+				A88CD24B1DD55A3F005C04EE /* Chart.swift */,
+				A88CD2501DD5658A005C04EE /* GraphViewController.swift */,
+			);
+			path = "Packetized Energy Tablet App";
+			sourceTree = "<group>";
+		};
+		A8D630681DB430E900E43D4A /* Packetized Energy Tablet AppTests */ = {
+			isa = PBXGroup;
+			children = (
+				A8D630691DB430E900E43D4A /* Packetized_Energy_Tablet_AppTests.swift */,
+				A8D6306B1DB430E900E43D4A /* Info.plist */,
+			);
+			path = "Packetized Energy Tablet AppTests";
+			sourceTree = "<group>";
+		};
+		A8D630731DB430E900E43D4A /* Packetized Energy Tablet AppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				A8D630741DB430E900E43D4A /* Packetized_Energy_Tablet_AppUITests.swift */,
+				A8D630761DB430E900E43D4A /* Info.plist */,
+			);
+			path = "Packetized Energy Tablet AppUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A8D6304D1DB430E800E43D4A /* Packetized Energy Tablet App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A8D630791DB430E900E43D4A /* Build configuration list for PBXNativeTarget "Packetized Energy Tablet App" */;
+			buildPhases = (
+				A8D6304A1DB430E800E43D4A /* Sources */,
+				A8D6304B1DB430E800E43D4A /* Frameworks */,
+				A8D6304C1DB430E800E43D4A /* Resources */,
+				A88CD2491DD55214005C04EE /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Packetized Energy Tablet App";
+			productName = "Packetized Energy Tablet App";
+			productReference = A8D6304E1DB430E800E43D4A /* Packetized Energy Tablet App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A8D630641DB430E900E43D4A /* Packetized Energy Tablet AppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A8D6307C1DB430E900E43D4A /* Build configuration list for PBXNativeTarget "Packetized Energy Tablet AppTests" */;
+			buildPhases = (
+				A8D630611DB430E900E43D4A /* Sources */,
+				A8D630621DB430E900E43D4A /* Frameworks */,
+				A8D630631DB430E900E43D4A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A8D630671DB430E900E43D4A /* PBXTargetDependency */,
+			);
+			name = "Packetized Energy Tablet AppTests";
+			productName = "Packetized Energy Tablet AppTests";
+			productReference = A8D630651DB430E900E43D4A /* Packetized Energy Tablet AppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A8D6306F1DB430E900E43D4A /* Packetized Energy Tablet AppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A8D6307F1DB430E900E43D4A /* Build configuration list for PBXNativeTarget "Packetized Energy Tablet AppUITests" */;
+			buildPhases = (
+				A8D6306C1DB430E900E43D4A /* Sources */,
+				A8D6306D1DB430E900E43D4A /* Frameworks */,
+				A8D6306E1DB430E900E43D4A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A8D630721DB430E900E43D4A /* PBXTargetDependency */,
+			);
+			name = "Packetized Energy Tablet AppUITests";
+			productName = "Packetized Energy Tablet AppUITests";
+			productReference = A8D630701DB430E900E43D4A /* Packetized Energy Tablet AppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A8D630461DB430E800E43D4A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = "Packetized Energy";
+				TargetAttributes = {
+					A8D6304D1DB430E800E43D4A = {
+						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
+					};
+					A8D630641DB430E900E43D4A = {
+						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
+						TestTargetID = A8D6304D1DB430E800E43D4A;
+					};
+					A8D6306F1DB430E900E43D4A = {
+						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
+						TestTargetID = A8D6304D1DB430E800E43D4A;
+					};
+				};
+			};
+			buildConfigurationList = A8D630491DB430E800E43D4A /* Build configuration list for PBXProject "Packetized Energy Tablet App" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A8D630451DB430E800E43D4A;
+			productRefGroup = A8D6304F1DB430E800E43D4A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A8D6304D1DB430E800E43D4A /* Packetized Energy Tablet App */,
+				A8D630641DB430E900E43D4A /* Packetized Energy Tablet AppTests */,
+				A8D6306F1DB430E900E43D4A /* Packetized Energy Tablet AppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A8D6304C1DB430E800E43D4A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A8D630831DB4315D00E43D4A /* logo.png in Resources */,
+				A83AACE91DB5664E000769B0 /* graph.png in Resources */,
+				1E09809B1DF1C9B1005CB4D5 /* appGraph.png in Resources */,
+				A8D6305F1DB430E800E43D4A /* LaunchScreen.storyboard in Resources */,
+				A8D6305C1DB430E800E43D4A /* Assets.xcassets in Resources */,
+				A8D630571DB430E800E43D4A /* Main.storyboard in Resources */,
+				A889724B1DB44A40002B2B03 /* graph.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A8D630631DB430E900E43D4A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A8D6306E1DB430E900E43D4A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A8D6304A1DB430E800E43D4A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A8267BD21DE3562F00E82522 /* Draw.swift in Sources */,
+				A88CD24C1DD55A3F005C04EE /* Chart.swift in Sources */,
+				A8D630541DB430E800E43D4A /* ViewController.swift in Sources */,
+				A8D6305A1DB430E800E43D4A /* Packetized_Energy_Tablet_App.xcdatamodeld in Sources */,
+				A88CD2511DD5658A005C04EE /* GraphViewController.swift in Sources */,
+				A8D630521DB430E800E43D4A /* AppDelegate.swift in Sources */,
+				69F888861DD506110083719F /* ConnectViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A8D630611DB430E900E43D4A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A8D6306A1DB430E900E43D4A /* Packetized_Energy_Tablet_AppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A8D6306C1DB430E900E43D4A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A8D630751DB430E900E43D4A /* Packetized_Energy_Tablet_AppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A8D630671DB430E900E43D4A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A8D6304D1DB430E800E43D4A /* Packetized Energy Tablet App */;
+			targetProxy = A8D630661DB430E900E43D4A /* PBXContainerItemProxy */;
+		};
+		A8D630721DB430E900E43D4A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A8D6304D1DB430E800E43D4A /* Packetized Energy Tablet App */;
+			targetProxy = A8D630711DB430E900E43D4A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A8D630551DB430E800E43D4A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A8D630561DB430E800E43D4A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A8D6305D1DB430E800E43D4A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A8D6305E1DB430E800E43D4A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A8D630771DB430E900E43D4A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		A8D630781DB430E900E43D4A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A8D6307A1DB430E900E43D4A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Packetized Energy Tablet App/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "PE.Packetized-Energy-Tablet-App";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		A8D6307B1DB430E900E43D4A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Packetized Energy Tablet App/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "PE.Packetized-Energy-Tablet-App";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		A8D6307D1DB430E900E43D4A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Packetized Energy Tablet AppTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "PE.Packetized-Energy-Tablet-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Packetized Energy Tablet App.app/Packetized Energy Tablet App";
+			};
+			name = Debug;
+		};
+		A8D6307E1DB430E900E43D4A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Packetized Energy Tablet AppTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "PE.Packetized-Energy-Tablet-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Packetized Energy Tablet App.app/Packetized Energy Tablet App";
+			};
+			name = Release;
+		};
+		A8D630801DB430E900E43D4A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Packetized Energy Tablet AppUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "PE.Packetized-Energy-Tablet-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "Packetized Energy Tablet App";
+			};
+			name = Debug;
+		};
+		A8D630811DB430E900E43D4A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Packetized Energy Tablet AppUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "PE.Packetized-Energy-Tablet-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "Packetized Energy Tablet App";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A8D630491DB430E800E43D4A /* Build configuration list for PBXProject "Packetized Energy Tablet App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A8D630771DB430E900E43D4A /* Debug */,
+				A8D630781DB430E900E43D4A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A8D630791DB430E900E43D4A /* Build configuration list for PBXNativeTarget "Packetized Energy Tablet App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A8D6307A1DB430E900E43D4A /* Debug */,
+				A8D6307B1DB430E900E43D4A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A8D6307C1DB430E900E43D4A /* Build configuration list for PBXNativeTarget "Packetized Energy Tablet AppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A8D6307D1DB430E900E43D4A /* Debug */,
+				A8D6307E1DB430E900E43D4A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A8D6307F1DB430E900E43D4A /* Build configuration list for PBXNativeTarget "Packetized Energy Tablet AppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A8D630801DB430E900E43D4A /* Debug */,
+				A8D630811DB430E900E43D4A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A8D630581DB430E800E43D4A /* Packetized_Energy_Tablet_App.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A8D630591DB430E800E43D4A /* Packetized_Energy_Tablet_App.xcdatamodel */,
+			);
+			currentVersion = A8D630591DB430E800E43D4A /* Packetized_Energy_Tablet_App.xcdatamodel */;
+			path = Packetized_Energy_Tablet_App.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = A8D630461DB430E800E43D4A /* Project object */;
+}

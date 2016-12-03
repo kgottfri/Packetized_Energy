@@ -154,7 +154,28 @@ class GraphViewController: UIViewController {
         
                 //let postString = "THISISATEST"
                 //request.httpBody = postString.data(using: .utf8)
-        var post_data = "TESTDATA".data(using: String.Encoding.utf8)
+        //var post_data = .data(using: Int.Encoding.utf8)
+        
+        //convert to delimited strings for posting
+        var arrayXstring = arrayX.map {
+            String($0)
+        }
+        
+        let arrayXpost = arrayXstring.joined(separator: ",")
+        
+        var arrayYstring = arrayY.map {
+            String($0)
+        }
+        
+        let arrayYpost = arrayYstring.joined(separator: ",")
+        
+        //combine
+        let arraysPost = "X-VALUES: " + arrayXpost + " Y-VALUES: " + arrayYpost + "DATAEND"
+        
+        print(arraysPost)
+        
+        let post_data = arraysPost.data(using: String.Encoding.utf8)
+        //let post_data = NSData(bytes: &test, length: MemoryLayout<Int>.size)
         
         //var data = "TESTDATA"
         //get code (recieves "confirmed" from server):
@@ -171,6 +192,7 @@ class GraphViewController: UIViewController {
             }
             
             var responseString = String(data: data, encoding: .utf8)!
+            //should be test array from server - NOT WORKING
             print(responseString)
                 
         }

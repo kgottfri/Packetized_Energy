@@ -45,11 +45,11 @@ class GraphViewController: UIViewController {
     }
     
     // The reset button for the graph
-    
-    @IBAction func undoDrawing(_ sender: AnyObject) {
+    @IBAction func resetButton(_ sender: AnyObject) {
         self.imageView.image = nil
         lastPoint = nil
-        
+        arrayX = []
+        arrayY = []
     }
     
     // Creates a data point when the user first touches the screen
@@ -86,18 +86,30 @@ class GraphViewController: UIViewController {
             UIGraphicsEndImageContext()
             if(lastPoint.x.truncatingRemainder(dividingBy: xScale) == 0){
                 y = 600 - Int(lastPoint.y) * Int(yScale)
-                arrayX[inc] = x
-                arrayY[inc] = y
-                inc = inc + 1
+                arrayX.append(x)
+                arrayY.append(y)
+//                inc = inc + 1
             }
             lastPoint = currentPoint
         }
+        
     }
     
+    //Function called if
     override func touchesEnded(_ touches: Set<UITouch>,
                                with event: UIEvent?){
+        if(isSwiping == true){
+            if(lastPoint.x < 600){
+                self.imageView.image = nil
+                lastPoint = nil
+            }
+        }
         if(!isSwiping) {
-            if(lastPoint.x > 600){
+            if(lastPoint.x < 600){
+                self.imageView.image = nil
+                lastPoint = nil
+            }
+            else{
                 // This is a single touch, draw a point
                 UIGraphicsBeginImageContext(self.imageView.frame.size)
                 self.imageView.image?.draw(in: CGRect(x: 0, y: 0, width: self.imageView.frame.size.width, height: self.imageView.frame.size.height))
@@ -109,10 +121,6 @@ class GraphViewController: UIViewController {
                 UIGraphicsGetCurrentContext()?.strokePath()
                 self.imageView.image = UIGraphicsGetImageFromCurrentImageContext()
                 UIGraphicsEndImageContext()
-            }
-            else{
-                self.imageView.image = nil
-                lastPoint = nil
             }
         }
         

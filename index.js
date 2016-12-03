@@ -20,8 +20,15 @@ function handleRequest(request, response){
     if(request.method = "POST") {
 
 	//console.log(request)
+	
 	console.log('post')
+	console.log(request.data)
 	response.end("post worked");
+
+	request.on('data', function(chunk) {
+	console.log("Received body data:");
+	console.log(chunk.toString());
+    });
 	
     }
     

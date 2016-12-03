@@ -1,0 +1,25 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "2b3304bd-fdfd-0310-8f62-ac7fdb0732df++9483",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "2b3304bd-fdfd-0310-8f62-ac7fdb0732df++9483" : {
+
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "2b3304bd-fdfd-0310-8f62-ac7fdb0732df++9483" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "AE4E3230-7206-400E-9553-5A94EE9382AD",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "2b3304bd-fdfd-0310-8f62-ac7fdb0732df++9483" : "skalka-misc\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "RemoteDBSwift",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "courses\/CS275\/code\/RemoteDBSwift\/RemoteDBSwift.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "svn:\/\/squall.cems.uvm.edu\/csl",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "2b3304bd-fdfd-0310-8f62-ac7fdb0732df++9483"
+    }
+  ]
+}

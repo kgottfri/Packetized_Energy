@@ -64,12 +64,12 @@ class ConnectViewController: UIViewController {
             }
             else {
                 
-                self.performSegue(withIdentifier: "ConnectSegue", sender: nil)
+                OperationQueue.main.addOperation {
+                    self.performSegue(withIdentifier: "ConnectSegue", sender: nil)
+                }
             }
             
-            
-            //print("responseString = \(responseString!)")
-            
+                        
         }
         
         task.resume();

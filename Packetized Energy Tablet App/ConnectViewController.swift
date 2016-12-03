@@ -35,11 +35,12 @@ class ConnectViewController: UIViewController {
         let port = self.port_number.text
         //initialize connection (using inputted IP address and port number)
         let urlStr : String = "http://" + ip! + ":" + port!
+        print(urlStr)
         let url = URL(string : urlStr)
         var request = URLRequest(url: url!)
         
 //        //POST code (not working yet)
-//        request.httpMethod = "POST"
+        request.httpMethod = "GET"
 //        let postString = "THISISATEST"
 //        request.httpBody = postString.data(using: .utf8)
         

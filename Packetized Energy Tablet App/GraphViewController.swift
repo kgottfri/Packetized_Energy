@@ -7,7 +7,7 @@
 import UIKit
 class GraphViewController: UIViewController {
     
-    
+    var url_to_request = "127.0.0.1:8080"
     var lastPoint:CGPoint!
     var currentPoint:CGPoint!
     var isSwiping:Bool!
@@ -105,6 +105,12 @@ class GraphViewController: UIViewController {
                 self.imageView.image = nil
                 lastPoint = nil
             }
+         
+            else {
+            //valid line drawn
+            upload_request()
+            print("upload_request called")
+            }
         }
         // go here if only one point is drawn(should just clear the graph)
         else if(!isSwiping) {
@@ -135,6 +141,42 @@ class GraphViewController: UIViewController {
         
         
     }
+    
+    func upload_request()
+    {
+
+        
+        let url = URL(string : "http://127.0.0.1:8080")
+        var request = URLRequest(url: url!)
+        
+        //        //POST code (not working yet)
+                request.httpMethod = "POST"
+        
+                let postString = "THISISATEST"
+                request.httpBody = postString.data(using: .utf8)
+        
+        //var data = "TESTDATA"
+        //get code (recieves "confirmed" from server):
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data, error == nil else {   // check for fundamental networking error
+                print("Can not connect to the server")
+                return
+            }
+            
+            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
+                print("statusCode should be 200, but is \(httpStatus.statusCode)")
+                print("response = \(response)")
+            }
+            
+            var responseString = String(data: data, encoding: .utf8)!
+            print(responseString)
+                
+        }
+        
+        task.resume()
+        
+    }
+    
     
 //    func DrawData(_ ){
 //        UIGraphicsBeginImageContext(self.imageView.frame.size)

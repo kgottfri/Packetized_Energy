@@ -98,29 +98,19 @@ class GraphViewController: UIViewController {
     //Function called if
     override func touchesEnded(_ touches: Set<UITouch>,
                                with event: UIEvent?){
+        //Called if the line drawn is ended.  the value of the x point should be greater than 600 
+        // or the line will disappear.
         if(isSwiping == true){
             if(lastPoint.x < 600){
                 self.imageView.image = nil
                 lastPoint = nil
             }
         }
-        if(!isSwiping) {
+        // go here if only one point is drawn(should just clear the graph)
+        else if(!isSwiping) {
             if(lastPoint.x < 600){
                 self.imageView.image = nil
                 lastPoint = nil
-            }
-            else{
-                // This is a single touch, draw a point
-                UIGraphicsBeginImageContext(self.imageView.frame.size)
-                self.imageView.image?.draw(in: CGRect(x: 0, y: 0, width: self.imageView.frame.size.width, height: self.imageView.frame.size.height))
-                UIGraphicsGetCurrentContext()?.setLineCap(CGLineCap.round)
-                UIGraphicsGetCurrentContext()?.setLineWidth(2.0)
-                UIGraphicsGetCurrentContext()?.setStrokeColor(red: red, green: green, blue: blue, alpha: 1.0)
-                UIGraphicsGetCurrentContext()?.move(to: CGPoint(x: lastPoint.x, y: lastPoint.y))
-                UIGraphicsGetCurrentContext()?.addLine(to: CGPoint(x: lastPoint.x, y: lastPoint.y))
-                UIGraphicsGetCurrentContext()?.strokePath()
-                self.imageView.image = UIGraphicsGetImageFromCurrentImageContext()
-                UIGraphicsEndImageContext()
             }
         }
         

@@ -20,7 +20,8 @@ class GraphViewController: UIViewController {
     var x = 0
     var y = 0
     var inc = 0
-    var array = [[Int]]()
+    var arrayX = [Int]()
+    var arrayY = [Int]()
     
     @IBOutlet var imageView: UIImageView!
     @IBOutlet weak var Start: UIButton!
@@ -85,7 +86,8 @@ class GraphViewController: UIViewController {
             UIGraphicsEndImageContext()
             if(lastPoint.x.truncatingRemainder(dividingBy: xScale) == 0){
                 y = 600 - Int(lastPoint.y) * Int(yScale)
-                array[inc] = [x, y]
+                arrayX[inc] = x
+                arrayY[inc] = y
                 inc = inc + 1
             }
             lastPoint = currentPoint
@@ -113,6 +115,8 @@ class GraphViewController: UIViewController {
                 lastPoint = nil
             }
         }
+        
+        
     }
     func message(message: String, segue: Bool){
         

@@ -8,10 +8,24 @@ const PORT=8080;
 //We need a function which handles requests and send response
 function handleRequest(request, response){
   
-    console.log(request);
+    //console.log(request);
+
+    if(request.method = "GET") {
+
+	//console.log(request)
+	console.log('get')
+	response.end('confirmed');
+    }
+
+    if(request.method = "POST") {
+
+	//console.log(request)
+	console.log('post')
+	response.end("post worked");
+	
+    }
     
-    response.end('confirmed');
-    
+	
 }
 
 

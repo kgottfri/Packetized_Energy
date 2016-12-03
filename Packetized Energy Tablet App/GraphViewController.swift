@@ -95,7 +95,7 @@ class GraphViewController: UIViewController {
     override func touchesEnded(_ touches: Set<UITouch>,
                                with event: UIEvent?){
         if(!isSwiping) {
-            if(currentPoint.x > 600){
+            if(lastPoint.x > 600){
                 // This is a single touch, draw a point
                 UIGraphicsBeginImageContext(self.imageView.frame.size)
                 self.imageView.image?.draw(in: CGRect(x: 0, y: 0, width: self.imageView.frame.size.width, height: self.imageView.frame.size.height))
@@ -107,6 +107,10 @@ class GraphViewController: UIViewController {
                 UIGraphicsGetCurrentContext()?.strokePath()
                 self.imageView.image = UIGraphicsGetImageFromCurrentImageContext()
                 UIGraphicsEndImageContext()
+            }
+            else{
+                self.imageView.image = nil
+                lastPoint = nil
             }
         }
     }

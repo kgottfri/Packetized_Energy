@@ -1,5 +1,3 @@
-//
-//  GraphViewController.swift
 //  Packetized Energy Tablet App
 //
 //  Created by Kevin Gottfried on 11/10/16.
@@ -11,29 +9,35 @@ class GraphViewController: UIViewController {
     
     
     var lastPoint:CGPoint!
+    var currentPoint:CGPoint!
     var isSwiping:Bool!
     var red:CGFloat!
     var green:CGFloat!
     var blue:CGFloat!
     let data = [2.3, 4.4, 5.6, 1.3, 2.2]
-    var count = 0
+    let xScale = CGFloat(5)
+    let yScale = CGFloat(6)
+    var x = 0
+    var y = 0
+    var inc = 0
+    var array = [[Int]]()
     
     @IBOutlet var imageView: UIImageView!
     @IBOutlet weak var Start: UIButton!
     @IBOutlet weak var tfField: UITextField!
     @IBOutlet weak var graphView: GraphViewController!
     
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        updateChartWithData()
+        //        updateChartWithData()
         // Do any additional setup after loading the view.
         red   = (0.0/255.0)
         green = (0.0/255.0)
         blue  = (0.0/255.0)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -53,6 +57,7 @@ class GraphViewController: UIViewController {
         isSwiping    = false
         if let touch = touches.first{
             lastPoint = touch.location(in: imageView)
+            x = Int(lastPoint.x) / Int(xScale)
         }
     }
     
@@ -64,7 +69,7 @@ class GraphViewController: UIViewController {
         isSwiping = true;
         if let touch = touches.first{
             
-            var currentPoint = touch.location(in: imageView)
+            currentPoint = touch.location(in: imageView)
             if (currentPoint.x < lastPoint.x){
                 currentPoint.x = lastPoint.x
             }
@@ -78,26 +83,51 @@ class GraphViewController: UIViewController {
             UIGraphicsGetCurrentContext()?.strokePath()
             self.imageView.image = UIGraphicsGetImageFromCurrentImageContext()
             UIGraphicsEndImageContext()
+            if(lastPoint.x.truncatingRemainder(dividingBy: xScale) == 0){
+                y = 600 - Int(lastPoint.y) * Int(yScale)
+                array[inc] = [x, y]
+                inc = inc + 1
+            }
             lastPoint = currentPoint
         }
     }
-
+    
     override func touchesEnded(_ touches: Set<UITouch>,
                                with event: UIEvent?){
         if(!isSwiping) {
-            // This is a single touch, draw a point
-            UIGraphicsBeginImageContext(self.imageView.frame.size)
-            self.imageView.image?.draw(in: CGRect(x: 0, y: 0, width: self.imageView.frame.size.width, height: self.imageView.frame.size.height))
-            UIGraphicsGetCurrentContext()?.setLineCap(CGLineCap.round)
-            UIGraphicsGetCurrentContext()?.setLineWidth(2.0)
-            UIGraphicsGetCurrentContext()?.setStrokeColor(red: red, green: green, blue: blue, alpha: 1.0)
-            UIGraphicsGetCurrentContext()?.move(to: CGPoint(x: lastPoint.x, y: lastPoint.y))
-            UIGraphicsGetCurrentContext()?.addLine(to: CGPoint(x: lastPoint.x, y: lastPoint.y))
-            UIGraphicsGetCurrentContext()?.strokePath()
-            self.imageView.image = UIGraphicsGetImageFromCurrentImageContext()
-            UIGraphicsEndImageContext()
-            
+            if(currentPoint.x > 600){
+                // This is a single touch, draw a point
+                UIGraphicsBeginImageContext(self.imageView.frame.size)
+                self.imageView.image?.draw(in: CGRect(x: 0, y: 0, width: self.imageView.frame.size.width, height: self.imageView.frame.size.height))
+                UIGraphicsGetCurrentContext()?.setLineCap(CGLineCap.round)
+                UIGraphicsGetCurrentContext()?.setLineWidth(2.0)
+                UIGraphicsGetCurrentContext()?.setStrokeColor(red: red, green: green, blue: blue, alpha: 1.0)
+                UIGraphicsGetCurrentContext()?.move(to: CGPoint(x: lastPoint.x, y: lastPoint.y))
+                UIGraphicsGetCurrentContext()?.addLine(to: CGPoint(x: lastPoint.x, y: lastPoint.y))
+                UIGraphicsGetCurrentContext()?.strokePath()
+                self.imageView.image = UIGraphicsGetImageFromCurrentImageContext()
+                UIGraphicsEndImageContext()
+            }
         }
+    }
+    func message(message: String, segue: Bool){
+        
+        let alert = UIAlertController(title:"Alert", message: message, preferredStyle: UIAlertControllerStyle.alert )
+        var okAction: UIAlertAction
+        
+        if segue {
+            okAction = UIAlertAction(title:"OK", style: UIAlertActionStyle.default,  handler: { action in self.performSegue(withIdentifier: "ConnectSegue", sender: self)} )
+        }
+        else{
+            okAction = UIAlertAction(title:"OK", style: UIAlertActionStyle.default, handler:nil)
+        }
+        
+        alert.addAction(okAction)
+        
+        self.present(alert,animated: true,completion: nil)
+        
+        
+        
     }
     
 //    func DrawData(_ ){

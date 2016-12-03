@@ -152,16 +152,18 @@ class GraphViewController: UIViewController {
         //        //POST code (not working yet)
                 request.httpMethod = "POST"
         
-                let postString = "THISISATEST"
-                request.httpBody = postString.data(using: .utf8)
+                //let postString = "THISISATEST"
+                //request.httpBody = postString.data(using: .utf8)
+        var post_data = "TESTDATA".data(using: String.Encoding.utf8)
         
         //var data = "TESTDATA"
         //get code (recieves "confirmed" from server):
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+        let task = URLSession.shared.uploadTask(with: request, from: post_data) { data, response, error in
             guard let data = data, error == nil else {   // check for fundamental networking error
                 print("Can not connect to the server")
                 return
             }
+            
             
             if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
                 print("statusCode should be 200, but is \(httpStatus.statusCode)")
@@ -174,6 +176,9 @@ class GraphViewController: UIViewController {
         }
         
         task.resume()
+
+        
+        
         
     }
     

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E43811D1DF4C1A800A94FFC /* appGraph.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E43811C1DF4C1A800A94FFC /* appGraph.png */; };
 		69F888861DD506110083719F /* ConnectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F888851DD506110083719F /* ConnectViewController.swift */; };
 		A8267BD21DE3562F00E82522 /* Draw.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8267BD11DE3562F00E82522 /* Draw.swift */; };
 		A83AACE91DB5664E000769B0 /* graph.png in Resources */ = {isa = PBXBuildFile; fileRef = A83AACE81DB5664E000769B0 /* graph.png */; };
@@ -54,6 +55,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1E43811C1DF4C1A800A94FFC /* appGraph.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = appGraph.png; path = ../../appGraph.png; sourceTree = "<group>"; };
 		69F888851DD506110083719F /* ConnectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectViewController.swift; sourceTree = "<group>"; };
 		A8267BD11DE3562F00E82522 /* Draw.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Draw.swift; sourceTree = "<group>"; };
 		A83AACE81DB5664E000769B0 /* graph.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = graph.png; sourceTree = SOURCE_ROOT; };
@@ -124,6 +126,7 @@
 		A8D630501DB430E800E43D4A /* Packetized Energy Tablet App */ = {
 			isa = PBXGroup;
 			children = (
+				1E43811C1DF4C1A800A94FFC /* appGraph.png */,
 				A83AACE81DB5664E000769B0 /* graph.png */,
 				A889724A1DB44A40002B2B03 /* graph.png */,
 				A8D630821DB4315D00E43D4A /* logo.png */,
@@ -272,6 +275,7 @@
 				A8D6305F1DB430E800E43D4A /* LaunchScreen.storyboard in Resources */,
 				A8D6305C1DB430E800E43D4A /* Assets.xcassets in Resources */,
 				A8D630571DB430E800E43D4A /* Main.storyboard in Resources */,
+				1E43811D1DF4C1A800A94FFC /* appGraph.png in Resources */,
 				A889724B1DB44A40002B2B03 /* graph.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -111,7 +111,7 @@ class GraphViewController: UIViewController {
                 arrayX.removeAll()
                 arrayY.removeAll()
             }
-            get()
+//            get()
         }
         // go here if only one point is drawn(should just clear the graph)
         else if(!isSwiping) {

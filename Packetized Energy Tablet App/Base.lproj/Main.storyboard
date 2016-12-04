@@ -274,7 +274,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="appGraph.png" translatesAutoresizingMaskIntoConstraints="NO" id="V54-UG-mlc">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="3minGraph.png" translatesAutoresizingMaskIntoConstraints="NO" id="V54-UG-mlc">
                                 <rect key="frame" x="12" y="84" width="1002" height="687"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -459,7 +459,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="appGraph.png" width="998" height="615"/>
+        <image name="3minGraph.png" width="998" height="615"/>
         <image name="logo.png" width="606" height="378"/>
     </resources>
     <inferredMetricsTieBreakers>

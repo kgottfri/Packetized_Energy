@@ -7,7 +7,7 @@
 import UIKit
 class GraphViewController: UIViewController {
     
-    
+    var url_to_request = "127.0.0.1:8080"
     var lastPoint:CGPoint!
     var lastPointGet:CGPoint!
 
@@ -111,6 +111,12 @@ class GraphViewController: UIViewController {
                 arrayX.removeAll()
                 arrayY.removeAll()
             }
+         
+            else {
+            //valid line drawn
+            upload_request()
+            print("upload_request called")
+            }
         }
         // go here if only one point is drawn(should just clear the graph)
         else if(!isSwiping) {
@@ -163,6 +169,69 @@ class GraphViewController: UIViewController {
         
         
     }
+    
+    func upload_request()
+    {
+
+        
+        let url = URL(string : "http://127.0.0.1:8080")
+        var request = URLRequest(url: url!)
+        
+        //        //POST code (not working yet)
+                request.httpMethod = "POST"
+        
+                //let postString = "THISISATEST"
+                //request.httpBody = postString.data(using: .utf8)
+        //var post_data = .data(using: Int.Encoding.utf8)
+        
+        //convert to delimited strings for posting
+        var arrayXstring = arrayX.map {
+            String($0)
+        }
+        
+        let arrayXpost = arrayXstring.joined(separator: ",")
+        
+        var arrayYstring = arrayY.map {
+            String($0)
+        }
+        
+        let arrayYpost = arrayYstring.joined(separator: ",")
+        
+        //combine
+        let arraysPost = "X-VALUES: " + arrayXpost + " Y-VALUES: " + arrayYpost + "DATAEND"
+        
+        print(arraysPost)
+        
+        let post_data = arraysPost.data(using: String.Encoding.utf8)
+        //let post_data = NSData(bytes: &test, length: MemoryLayout<Int>.size)
+        
+        //var data = "TESTDATA"
+        //get code (recieves "confirmed" from server):
+        let task = URLSession.shared.uploadTask(with: request, from: post_data) { data, response, error in
+            guard let data = data, error == nil else {   // check for fundamental networking error
+                print("Can not connect to the server")
+                return
+            }
+            
+            
+            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
+                print("statusCode should be 200, but is \(httpStatus.statusCode)")
+                print("response = \(response)")
+            }
+            
+            var responseString = String(data: data, encoding: .utf8)!
+            //should be test array from server - NOT WORKING
+            print(responseString)
+                
+        }
+        
+        task.resume()
+
+        
+        
+        
+    }
+    
     
 //    func DrawData(_ ){
 //        UIGraphicsBeginImageContext(self.imageView.frame.size)

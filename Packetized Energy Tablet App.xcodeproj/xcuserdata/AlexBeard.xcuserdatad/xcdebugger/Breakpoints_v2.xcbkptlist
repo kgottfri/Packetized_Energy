@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Packetized Energy Tablet App/ConnectViewController.swift"
-            timestampString = "500502016.539833"
+            timestampString = "502481864.756492"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
             landmarkName = "ConnectButtonPressed(_:)"
             landmarkType = "7">
             <Locations>
@@ -63,6 +63,54 @@
                   startingLineNumber = "56"
                   endingLineNumber = "56"
                   offsetFromSymbolStart = "1910">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Packetized Energy Tablet App/GraphViewController.swift"
+            timestampString = "502487816.986677"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "177"
+            endingLineNumber = "177"
+            landmarkName = "upload_request()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Packetized_Energy_Tablet_App.GraphViewController.upload_request () -&gt; ()"
+                  moduleName = "Packetized Energy Tablet App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user/Documents/cs-tablet-app/Packetized%20Energy%20Tablet%20App/GraphViewController.swift"
+                  timestampString = "502486613.092715"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "161"
+                  endingLineNumber = "161"
+                  offsetFromSymbolStart = "388">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Packetized_Energy_Tablet_App.GraphViewController.(upload_request () -&gt; ()).(closure #1)"
+                  moduleName = "Packetized Energy Tablet App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user/Documents/cs-tablet-app/Packetized%20Energy%20Tablet%20App/GraphViewController.swift"
+                  timestampString = "502486613.096519"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "162"
+                  endingLineNumber = "162"
+                  offsetFromSymbolStart = "23">
                </Location>
             </Locations>
          </BreakpointContent>

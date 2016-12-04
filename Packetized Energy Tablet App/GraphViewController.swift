@@ -10,7 +10,6 @@ class GraphViewController: UIViewController {
     var url_to_request = "127.0.0.1:8080"
     var lastPoint:CGPoint!
     var lastPointGet:CGPoint!
-
     var currentPoint:CGPoint!
     var isSwiping:Bool!
     var red:CGFloat!
@@ -33,15 +32,35 @@ class GraphViewController: UIViewController {
     @IBOutlet weak var graphView: GraphViewController!
     
     
+    func message(message: String, segue: Bool){
+        
+        let alert = UIAlertController(title:"Alert", message: message, preferredStyle: UIAlertControllerStyle.alert )
+        var okAction: UIAlertAction
+        
+        if segue {
+            okAction = UIAlertAction(title:"OK", style: UIAlertActionStyle.default,  handler: { action in self.performSegue(withIdentifier: "ConnectSegue", sender: self)} )
+        }
+        else{
+            okAction = UIAlertAction(title:"OK", style: UIAlertActionStyle.default, handler:nil)
+        }
+        
+        alert.addAction(okAction)
+        
+        self.present(alert,animated: true,completion: nil)
+        
+        
+        
+    }
     
     override func viewDidLoad() {
+//        self.message(message: "Please draw a line starting in the left most grey area and continue to the right most grey area.", segue: false)
         super.viewDidLoad()
         //        updateChartWithData()
         // Do any additional setup after loading the view.
         red   = (0.0/255.0)
         green = (0.0/255.0)
         blue  = (0.0/255.0)
-        
+
     }
     
     override func didReceiveMemoryWarning() {
@@ -53,8 +72,12 @@ class GraphViewController: UIViewController {
     @IBAction func resetButton(_ sender: AnyObject) {
         self.imageView.image = nil
         lastPoint = nil
-        arrayX = []
-        arrayY = []
+        arrayX.removeAll()
+        arrayY.removeAll()
+    }
+    // Calls the function to draw the second line labeled "done"
+    @IBAction func Send(_ sender: AnyObject) {
+        get()
     }
     
     // Creates a data point when the user first touches the screen
@@ -64,6 +87,9 @@ class GraphViewController: UIViewController {
         if let touch = touches.first{
             lastPoint = touch.location(in: imageView)
             x = Int(lastPoint.x) / Int(xScale)
+            y = 100 - Int(lastPoint.y) / Int(yScale)
+            arrayX.append(x)
+            arrayY.append(y)
         }
     }
     
@@ -91,7 +117,7 @@ class GraphViewController: UIViewController {
             UIGraphicsEndImageContext()
             if(lastPoint.x.truncatingRemainder(dividingBy: xScale) == 0){
                 x = Int(lastPoint.x) / Int(xScale)
-                y = 600 - Int(lastPoint.y) * Int(yScale)
+                y = 100 - Int(lastPoint.y) / Int(yScale)
                 arrayX.append(x)
                 arrayY.append(y)
             }
@@ -113,9 +139,10 @@ class GraphViewController: UIViewController {
             }
          
             else {
-            //valid line drawn
-            upload_request()
-            print("upload_request called")
+                //valid line drawn
+                upload_request()
+                print("upload_request called")
+//                get()
             }
         }
         // go here if only one point is drawn(should just clear the graph)
@@ -123,52 +150,44 @@ class GraphViewController: UIViewController {
             if(lastPoint.x < 600){
                 self.imageView.image = nil
                 lastPoint = nil
+                arrayX.removeAll()
+                arrayY.removeAll()
             }
         }
         
         
     }
     
+    //loop to draw the second line
     func get(){
-        
-        for index in 0..<newX.count{
+        print (lastPoint)
+        lastPointGet = lastPoint //funky way of initializing the first point
+        lastPointGet.x = CGFloat(arrayX[0]) // funky way of updating first x point (can be changed)
+        for index in 1..<newX.count{
             draw(x: newX[index],y: newY[index])
         }
     }
+    
+    // function to draw the second line with data from the newX and newY arrays defined globally
+    // will draw the same line every time
     func draw(x: Int, y: Int){
 //        = 600 + Int(lastPointGet.y) * Int(yScale)
+        let nx = x * Int(xScale)
+        let ny = y * Int(yScale)
         UIGraphicsBeginImageContext(self.imageView.frame.size)
         self.imageView.image?.draw(in: CGRect(x: 0, y: 0, width: self.imageView.frame.size.width, height: self.imageView.frame.size.height))
         UIGraphicsGetCurrentContext()?.move(to: CGPoint(x: lastPointGet.x, y: lastPointGet.y))
-        UIGraphicsGetCurrentContext()?.addLine(to: CGPoint(x: x, y: y))
+        UIGraphicsGetCurrentContext()?.addLine(to: CGPoint(x: nx, y: ny))
         UIGraphicsGetCurrentContext()?.setLineCap(CGLineCap.square)
         UIGraphicsGetCurrentContext()?.setLineWidth(2.0)
         UIGraphicsGetCurrentContext()?.setStrokeColor(red: red, green: green, blue: blue, alpha: 1.0)
         UIGraphicsGetCurrentContext()?.strokePath()
         self.imageView.image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        lastPointGet.x = CGFloat(x)
-        lastPointGet.y = CGFloat(y)
+        lastPointGet.x = CGFloat(x * Int(xScale))
+        lastPointGet.y = CGFloat(y * Int(yScale))
     }
-    func message(message: String, segue: Bool){
-        
-        let alert = UIAlertController(title:"Alert", message: message, preferredStyle: UIAlertControllerStyle.alert )
-        var okAction: UIAlertAction
-        
-        if segue {
-            okAction = UIAlertAction(title:"OK", style: UIAlertActionStyle.default,  handler: { action in self.performSegue(withIdentifier: "ConnectSegue", sender: self)} )
-        }
-        else{
-            okAction = UIAlertAction(title:"OK", style: UIAlertActionStyle.default, handler:nil)
-        }
-        
-        alert.addAction(okAction)
-        
-        self.present(alert,animated: true,completion: nil)
-        
-        
-        
-    }
+
     
     func upload_request()
     {

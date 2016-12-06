@@ -77,6 +77,7 @@ class GraphViewController: UIViewController {
     }
     // Calls the function to draw the second line labeled "done"
     @IBAction func Send(_ sender: AnyObject) {
+        message(message: "Are you sure you want to submit this drawing?", segue: false)
         get()
     }
     

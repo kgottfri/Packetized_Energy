@@ -231,6 +231,7 @@
 				TargetAttributes = {
 					A8D6304D1DB430E800E43D4A = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = F5D895GB5K;
 						LastSwiftMigration = 0800;
 					};
 					A8D630641DB430E900E43D4A = {
@@ -456,6 +457,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = F5D895GB5K;
 				INFOPLIST_FILE = "Packetized Energy Tablet App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "PE.Packetized-Energy-Tablet-App";
@@ -469,6 +471,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = F5D895GB5K;
 				INFOPLIST_FILE = "Packetized Energy Tablet App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "PE.Packetized-Energy-Tablet-App";

@@ -32,16 +32,38 @@ class GraphViewController: UIViewController {
     @IBOutlet weak var graphView: GraphViewController!
     
     
-    func message(message: String, segue: Bool){
+    //use this message function to create a dialog box when necessary
+    //message: the message to be displayed in the box
+    //segue: flag whether or not the action will call a function
+    //toSegue: the desired action to segue to.  can be function, UIViewController, or ""
+    //title: desired title for the message box
+    //cancel: do you want a cancel button on the dialog box
+    func message(message: String, segue: Bool, toSegue: String, title: String, cancel: Bool){
         
-        let alert = UIAlertController(title:"Alert", message: message, preferredStyle: UIAlertControllerStyle.alert )
+        let alert = UIAlertController(title:title, message: message, preferredStyle: UIAlertControllerStyle.alert )
         var okAction: UIAlertAction
-        
-        if segue {
-            okAction = UIAlertAction(title:"OK", style: UIAlertActionStyle.default,  handler: { action in self.performSegue(withIdentifier: "ConnectSegue", sender: self)} )
+        var cancelAction: UIAlertAction
+
+        if segue { //
+            switch toSegue{ //switches the desired segue to function
+            case "get()":
+                okAction = UIAlertAction(title:"OK", style: UIAlertActionStyle.default,  handler: { action in self.get()} )
+            case "reset()":
+                okAction = UIAlertAction(title:"OK", style: UIAlertActionStyle.default,  handler: { action in self.reset()} )
+            default:
+                okAction = UIAlertAction(title:"OK", style: UIAlertActionStyle.default,  handler: nil )
+            }
+            
         }
         else{
             okAction = UIAlertAction(title:"OK", style: UIAlertActionStyle.default, handler:nil)
+        }
+        // if cancel bool is true then does nothing if button pressed,
+        // if cancel is false, doesn't add a cancel option only "OK"
+        if cancel {
+            cancelAction = UIAlertAction(title:"Cancel", style: UIAlertActionStyle.default,  handler: nil )
+            alert.addAction(cancelAction)
+                
         }
         
         alert.addAction(okAction)
@@ -52,9 +74,11 @@ class GraphViewController: UIViewController {
         
     }
     
+    
     override func viewDidLoad() {
-//        self.message(message: "Please draw a line starting in the left most grey area and continue to the right most grey area.", segue: false)
+        
         super.viewDidLoad()
+        //message(message: "Please Draw A Valid Line", segue: false, toSegue: "", title: "Info", cancel: false)
         //        updateChartWithData()
         // Do any additional setup after loading the view.
         red   = (0.0/255.0)
@@ -70,15 +94,17 @@ class GraphViewController: UIViewController {
     
     // The reset button for the graph
     @IBAction func resetButton(_ sender: AnyObject) {
-        self.imageView.image = nil
-        lastPoint = nil
-        arrayX.removeAll()
-        arrayY.removeAll()
+        message(message: "Are you sure you want to reset your drawing?", segue: true, toSegue: "reset()", title: "Reset Drawing", cancel: true)
     }
     // Calls the function to draw the second line labeled "done"
     @IBAction func Send(_ sender: AnyObject) {
-        message(message: "Are you sure you want to submit this drawing?", segue: false)
-        get()
+        if(arrayX.isEmpty && arrayY.isEmpty){
+            message(message: "Please Submit A valid drawing.", segue: false, toSegue: "", title: "Invalid Drawing", cancel: false)
+        }
+        else{
+            message(message: "Are you sure you want to submit this drawing?", segue: true, toSegue: "get()", title: "Submit Drawing", cancel: true)
+        }
+            
     }
     
     // Creates a data point when the user first touches the screen
@@ -133,26 +159,20 @@ class GraphViewController: UIViewController {
         // or the line will disappear.
         if(isSwiping == true){
             if(lastPoint.x < 600){
-                self.imageView.image = nil
-                lastPoint = nil
-                arrayX.removeAll()
-                arrayY.removeAll()
+                reset()
             }
          
-            else {
-                //valid line drawn
-                upload_request()
-                print("upload_request called")
-//                get()
-            }
+//            else {
+//                //valid line drawn
+//
+//                print("upload_request called")
+////                get()
+//            }
         }
         // go here if only one point is drawn(should just clear the graph)
         else if(!isSwiping) {
             if(lastPoint.x < 600){
-                self.imageView.image = nil
-                lastPoint = nil
-                arrayX.removeAll()
-                arrayY.removeAll()
+                reset()
             }
         }
         
@@ -161,6 +181,7 @@ class GraphViewController: UIViewController {
     
     //loop to draw the second line
     func get(){
+        upload_request()
         print (lastPoint)
         lastPointGet = lastPoint //funky way of initializing the first point
         lastPointGet.x = CGFloat(arrayX[0]) // funky way of updating first x point (can be changed)
@@ -189,7 +210,12 @@ class GraphViewController: UIViewController {
         lastPointGet.y = CGFloat(y * Int(yScale))
     }
 
-    
+    func reset() {
+        self.imageView.image = nil
+        lastPoint = nil
+        arrayX.removeAll()
+        arrayY.removeAll()
+    }
     func upload_request()
     {
 

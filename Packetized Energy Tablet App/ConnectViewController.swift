@@ -35,6 +35,7 @@ class ConnectViewController: UIViewController {
         let port = self.port_number.text
         //initialize connection (using inputted IP address and port number)
         let urlStr : String = "http://" + ip! + ":" + port!
+        //let urlStr : String = ip! + ":" + port!
         print(urlStr)
         let url = URL(string : urlStr)
         var request = URLRequest(url: url!)
@@ -47,7 +48,7 @@ class ConnectViewController: UIViewController {
         //get code (recieves "confirmed" from server):
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data, error == nil else {   // check for fundamental networking error
-                self.errorMessage(message: "Can not connect to the server", segue: false)
+                self.errorMessage(message: "Can not connect to " + urlStr, segue: false)
                 return
             }
             

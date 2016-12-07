@@ -8,6 +8,9 @@
 //
 import UIKit
 
+//global so it can be accessed from GraphViewController
+var urlStr = " "
+
 class ConnectViewController: UIViewController {
     
     @IBOutlet weak var port_number: UITextField!
@@ -34,7 +37,7 @@ class ConnectViewController: UIViewController {
         let ip = self.ip_address.text
         let port = self.port_number.text
         //initialize connection (using inputted IP address and port number)
-        let urlStr : String = "http://" + ip! + ":" + port!
+        urlStr = "http://" + ip! + ":" + port!
         //let urlStr : String = ip! + ":" + port!
         print(urlStr)
         let url = URL(string : urlStr)

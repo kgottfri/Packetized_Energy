@@ -4,10 +4,13 @@
 //  Copyright © 2016 Packetized Energy. All rights reserved.
 //
 
+
+
 import UIKit
 class GraphViewController: UIViewController {
     
-    var url_to_request = "127.0.0.1:8080"
+    //urlStr is url to connect to
+    
     var lastPoint:CGPoint!
     var lastPointGet:CGPoint!
     var currentPoint:CGPoint!
@@ -219,11 +222,8 @@ class GraphViewController: UIViewController {
     func upload_request()
     {
 
+        var request = URLRequest(url: URL(string : urlStr)!)
         
-        let url = URL(string : "http://127.0.0.1:8080")
-        var request = URLRequest(url: url!)
-        
-        //        //POST code (not working yet)
                 request.httpMethod = "POST"
         
                 //let postString = "THISISATEST"

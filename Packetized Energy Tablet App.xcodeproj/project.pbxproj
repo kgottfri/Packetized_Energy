@@ -71,10 +71,8 @@
 		A8D630601DB430E800E43D4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A8D630651DB430E900E43D4A /* Packetized Energy Tablet AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Packetized Energy Tablet AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8D630691DB430E900E43D4A /* Packetized_Energy_Tablet_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Packetized_Energy_Tablet_AppTests.swift; sourceTree = "<group>"; };
-		A8D6306B1DB430E900E43D4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A8D630701DB430E900E43D4A /* Packetized Energy Tablet AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Packetized Energy Tablet AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8D630741DB430E900E43D4A /* Packetized_Energy_Tablet_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Packetized_Energy_Tablet_AppUITests.swift; sourceTree = "<group>"; };
-		A8D630761DB430E900E43D4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A8D630821DB4315D00E43D4A /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -148,7 +146,6 @@
 			isa = PBXGroup;
 			children = (
 				A8D630691DB430E900E43D4A /* Packetized_Energy_Tablet_AppTests.swift */,
-				A8D6306B1DB430E900E43D4A /* Info.plist */,
 			);
 			path = "Packetized Energy Tablet AppTests";
 			sourceTree = "<group>";
@@ -157,7 +154,6 @@
 			isa = PBXGroup;
 			children = (
 				A8D630741DB430E900E43D4A /* Packetized_Energy_Tablet_AppUITests.swift */,
-				A8D630761DB430E900E43D4A /* Info.plist */,
 			);
 			path = "Packetized Energy Tablet AppUITests";
 			sourceTree = "<group>";

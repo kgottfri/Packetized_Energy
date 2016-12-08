@@ -218,6 +218,28 @@ class GraphViewController: UIViewController {
         lastPoint = nil
         arrayX.removeAll()
         arrayY.removeAll()
+        
+        //----------------
+        //send reset command
+        var request = URLRequest(url: URL(string : urlStr)!)
+        
+        request.httpMethod = "POST"
+        
+        let task = URLSession.shared.uploadTask(with: request, from: "RESET".data(using: String.Encoding.utf8)) { data, response, error in
+            guard let data = data, error == nil else {   // check for fundamental networking error
+                print("Can not connect to the server")
+                return
+            }
+            
+            
+            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
+                print("statusCode should be 200, but is \(httpStatus.statusCode)")
+                print("response = \(response)")
+            }
+            
+        }
+        
+        //----------------
     }
     func upload_request()
     {

@@ -162,7 +162,7 @@ class GraphViewController: UIViewController {
         // or the line will disappear.
         if(isSwiping == true){
             if(lastPoint.x < 600){
-                reset()
+                clear_screen()
             }
          
 //            else {
@@ -175,7 +175,7 @@ class GraphViewController: UIViewController {
         // go here if only one point is drawn(should just clear the graph)
         else if(!isSwiping) {
             if(lastPoint.x < 600){
-                reset()
+                clear_screen()
             }
         }
         
@@ -214,12 +214,9 @@ class GraphViewController: UIViewController {
     }
 
     func reset() {
-        self.imageView.image = nil
-        lastPoint = nil
-        arrayX.removeAll()
-        arrayY.removeAll()
         
-        //----------------
+        clear_screen()
+        
         //send reset command
         var request = URLRequest(url: URL(string : urlStr)!)
         
@@ -239,8 +236,18 @@ class GraphViewController: UIViewController {
             
         }
         
-        //----------------
+        task.resume()
+        
     }
+    
+    func clear_screen() {
+        self.imageView.image = nil
+        lastPoint = nil
+        arrayX.removeAll()
+        arrayY.removeAll()
+    
+    }
+    
     func upload_request()
     {
 

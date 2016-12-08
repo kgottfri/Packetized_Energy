@@ -215,43 +215,14 @@ class GraphViewController: UIViewController {
 
     func reset() {
         
-        clear_screen()
-        
-        //send reset command
-        var request = URLRequest(url: URL(string : urlStr)!)
-        
-        request.httpMethod = "POST"
-        
-        let task = URLSession.shared.uploadTask(with: request, from: "RESET".data(using: String.Encoding.utf8)) { data, response, error in
-            guard let data = data, error == nil else {   // check for fundamental networking error
-                print("Can not connect to the server")
-                return
-            }
-            
-            
-            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
-                print("statusCode should be 200, but is \(httpStatus.statusCode)")
-                print("response = \(response)")
-            }
-            
-        }
-        
-        task.resume()
-        
-    }
-    
-    func clear_screen() {
-        self.imageView.image = nil
-        lastPoint = nil
-        arrayX.removeAll()
-        arrayY.removeAll()
-        
-        //-------
+//        clear_screen()
+//        
+//        //send reset command
 //        var request = URLRequest(url: URL(string : urlStr)!)
 //        
 //        request.httpMethod = "POST"
 //        
-//        let task = URLSession.shared.uploadTask(with: request, from: "1".data(using: String.Encoding.utf8)) { data, response, error in
+//        let task = URLSession.shared.uploadTask(with: request, from: "RESET".data(using: String.Encoding.utf8)) { data, response, error in
 //            guard let data = data, error == nil else {   // check for fundamental networking error
 //                print("Can not connect to the server")
 //                return
@@ -263,12 +234,58 @@ class GraphViewController: UIViewController {
 //                print("response = \(response)")
 //            }
 //            
+//            
 //        }
 //        
 //        task.resume()
         
+        postResponse(index: 1)
         
-        //-------
+    }
+    
+    func postResponse(index: Int) -> String {
+        
+        var request = URLRequest(url: URL(string : urlStr)!)
+        
+        var responseString = ""
+        
+        request.httpMethod = "POST"
+        
+        var indexString = String(index)
+        
+        let task = URLSession.shared.uploadTask(with: request, from: indexString.data(using: String.Encoding.utf8)) { data, response, error in
+            guard let data = data, error == nil else {   // check for fundamental networking error
+                print("Can not connect to the server")
+                return
+            }
+            
+            
+            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
+                print("statusCode should be 200, but is \(httpStatus.statusCode)")
+                print("response = \(response)")
+            }
+            
+            var responseString = String(data: data, encoding: .utf8)!
+            //should be test array from server - NOT WORKING
+            print(responseString)
+        }
+        
+        task.resume()
+        
+        return responseString
+
+        
+    }
+    
+
+    
+    func clear_screen() {
+        self.imageView.image = nil
+        lastPoint = nil
+        arrayX.removeAll()
+        arrayY.removeAll()
+        
+
     
     }
     

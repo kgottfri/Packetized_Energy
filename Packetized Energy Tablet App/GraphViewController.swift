@@ -140,8 +140,8 @@ class GraphViewController: UIViewController {
             UIGraphicsGetCurrentContext()?.move(to: CGPoint(x: lastPoint.x, y: lastPoint.y))
             UIGraphicsGetCurrentContext()?.addLine(to: CGPoint(x: currentPoint.x, y: currentPoint.y))
             UIGraphicsGetCurrentContext()?.setLineCap(CGLineCap.square)
-            UIGraphicsGetCurrentContext()?.setLineWidth(2.0)
-            UIGraphicsGetCurrentContext()?.setStrokeColor(red: red, green: green, blue: blue, alpha: 1.0)
+            UIGraphicsGetCurrentContext()?.setLineWidth(4.0)
+            UIGraphicsGetCurrentContext()?.setStrokeColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 1.0)
             UIGraphicsGetCurrentContext()?.strokePath()
             self.imageView.image = UIGraphicsGetImageFromCurrentImageContext()
             UIGraphicsEndImageContext()
@@ -204,8 +204,8 @@ class GraphViewController: UIViewController {
         UIGraphicsGetCurrentContext()?.move(to: CGPoint(x: lastPointGet.x, y: lastPointGet.y))
         UIGraphicsGetCurrentContext()?.addLine(to: CGPoint(x: nx, y: ny))
         UIGraphicsGetCurrentContext()?.setLineCap(CGLineCap.square)
-        UIGraphicsGetCurrentContext()?.setLineWidth(2.0)
-        UIGraphicsGetCurrentContext()?.setStrokeColor(red: red, green: green, blue: blue, alpha: 1.0)
+        UIGraphicsGetCurrentContext()?.setLineWidth(4.0)
+        UIGraphicsGetCurrentContext()?.setStrokeColor(red: 0.0, green: 1.0, blue: 0.0, alpha: 1.0)
         UIGraphicsGetCurrentContext()?.strokePath()
         self.imageView.image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
@@ -245,6 +245,30 @@ class GraphViewController: UIViewController {
         lastPoint = nil
         arrayX.removeAll()
         arrayY.removeAll()
+        
+        //-------
+//        var request = URLRequest(url: URL(string : urlStr)!)
+//        
+//        request.httpMethod = "POST"
+//        
+//        let task = URLSession.shared.uploadTask(with: request, from: "1".data(using: String.Encoding.utf8)) { data, response, error in
+//            guard let data = data, error == nil else {   // check for fundamental networking error
+//                print("Can not connect to the server")
+//                return
+//            }
+//            
+//            
+//            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
+//                print("statusCode should be 200, but is \(httpStatus.statusCode)")
+//                print("response = \(response)")
+//            }
+//            
+//        }
+//        
+//        task.resume()
+        
+        
+        //-------
     
     }
     

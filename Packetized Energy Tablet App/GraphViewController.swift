@@ -31,7 +31,7 @@ class GraphViewController: UIViewController, UIPickerViewDataSource,UIPickerView
     var arrayY = [Float]()
     var drawn = false
     let pickerData = ["1","2","3","4","5","6","7","8","9","10"]
-    
+    let deadlineTime = DispatchTime.now() + .seconds(2)
     @IBOutlet var imageView: UIImageView!
     @IBOutlet weak var Start: UIButton!
     @IBOutlet weak var tfField: UITextField!
@@ -251,26 +251,29 @@ class GraphViewController: UIViewController, UIPickerViewDataSource,UIPickerView
         for index in 0..<arrayX.count{
             simDraw(index: index)
 //            Timer.scheduledTimer(timeInterval: TimeInterval(3), target: self, selector: #selector(GraphViewController.wait), userInfo: nil, repeats: false)
-            unowned let unownedSelf = self
-            
-            let deadlineTime = DispatchTime.now() + .seconds(2)
-            DispatchQueue.main.asyncAfter(deadline: deadlineTime, execute: {
-                unownedSelf.draw(x: self.newX[index],y: self.newY[index])
-            })
+//            unowned let unownedSelf = self
+//            
+//            
+//            DispatchQueue.main.asyncAfter(deadline: deadlineTime, execute: {
+//                unownedSelf.draw(x: self.newX[index],y: self.newY[index])
+//            })
+            delay(2){
+                self.draw(x: self.newX[index],y: self.newY[index])
+            }
             
         }
     }
     
-    func wait(){
-        var count = 0
-        count += 1
+    func delay(_ delay:Double, closure:@escaping ()->()) {
+        let when = DispatchTime.now() + delay
+        DispatchQueue.main.asyncAfter(deadline: when, execute: closure)
     }
     // function to draw the second line with data from the newX and newY arrays defined globally
     // will draw the same line every time
     func draw(x: Float, y: Float){
 //        = 600 + Int(lastPointGet.y) * Int(yScale)
         let nx = CGFloat(x * Float(xScale))
-        let ny = CGFloat(y * Float(yScale))
+        let ny = CGFloat((100 - y)  * Float(yScale))
         UIGraphicsBeginImageContext(self.imageView.frame.size)
         self.imageView.image?.draw(in: CGRect(x: 0, y: 0, width: self.imageView.frame.size.width, height: self.imageView.frame.size.height))
         UIGraphicsGetCurrentContext()?.move(to: CGPoint(x: lastPointGet.x, y: lastPointGet.y))
@@ -281,15 +284,17 @@ class GraphViewController: UIViewController, UIPickerViewDataSource,UIPickerView
         UIGraphicsGetCurrentContext()?.strokePath()
         self.imageView.image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        lastPointGet.x = CGFloat(x * Float(xScale))
-        lastPointGet.y = CGFloat(y * Float(yScale))
+        lastPointGet.x = nx
+        lastPointGet.y = ny
     }
     func simDraw(index: Int){
         x = arrayX[index]
         y = arrayY[index]
         newX.append(x)
-        let rand = Float32((Double(arc4random()) / 5) * (5 - 0))
-        newY.append(y - 1)
+        let rand = Float32((Double(arc4random_uniform(7)) + 1))
+        print(y)
+        print(rand)
+        newY.append(y - rand)
     }
     func reset() {
         
@@ -362,6 +367,8 @@ class GraphViewController: UIViewController, UIPickerViewDataSource,UIPickerView
         lastPoint = nil
         arrayX.removeAll()
         arrayY.removeAll()
+        newX.removeAll()
+        newY.removeAll()
         drawn = false
 
     

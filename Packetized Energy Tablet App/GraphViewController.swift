@@ -19,15 +19,16 @@ class GraphViewController: UIViewController {
     var green:CGFloat!
     var blue:CGFloat!
     let data = [2.3, 4.4, 5.6, 1.3, 2.2]
-    let newX: [Int] = [1,2,5,6,7,10,15,20,50,100,120,170]
-    let newY: [Int] = [44,55,36,37,50,66,74,66,56,57,51,44]
+    let newX: [Float] = [1,2,5,6,7,10,15,20,50,100,120,170]
+    let newY: [Float] = [44,55,36,37,50,66,74,66,56,57,51,44]
     let xScale = CGFloat(5)
     let yScale = CGFloat(6)
-    var x = 0
-    var y = 0
+    var x: Float = 0
+    var y: Float = 0
     var inc = 0
-    var arrayX = [Int]()
-    var arrayY = [Int]()
+    var arrayX = [Float]()
+    var arrayY = [Float]()
+    var drawn = false
     
     @IBOutlet var imageView: UIImageView!
     @IBOutlet weak var Start: UIButton!
@@ -116,8 +117,8 @@ class GraphViewController: UIViewController {
         isSwiping    = false
         if let touch = touches.first{
             lastPoint = touch.location(in: imageView)
-            x = Int(lastPoint.x) / Int(xScale)
-            y = 100 - Int(lastPoint.y) / Int(yScale)
+            x = Float(lastPoint.x) / Float(xScale)
+            y = 100 - Float(lastPoint.y) / Float(yScale)
             arrayX.append(x)
             arrayY.append(y)
         }
@@ -129,12 +130,14 @@ class GraphViewController: UIViewController {
                                with event: UIEvent?){
         
         isSwiping = true;
+        if(!drawn){
         if let touch = touches.first{
             
             currentPoint = touch.location(in: imageView)
             if (currentPoint.x < lastPoint.x){
-                isSwiping = false
+                currentPoint.x = lastPoint.x
             }
+            
             UIGraphicsBeginImageContext(self.imageView.frame.size)
             self.imageView.image?.draw(in: CGRect(x: 0, y: 0, width: self.imageView.frame.size.width, height: self.imageView.frame.size.height))
             UIGraphicsGetCurrentContext()?.move(to: CGPoint(x: lastPoint.x, y: lastPoint.y))
@@ -145,15 +148,14 @@ class GraphViewController: UIViewController {
             UIGraphicsGetCurrentContext()?.strokePath()
             self.imageView.image = UIGraphicsGetImageFromCurrentImageContext()
             UIGraphicsEndImageContext()
-            if(lastPoint.x.truncatingRemainder(dividingBy: xScale) == 0){
-                x = Int(lastPoint.x) / Int(xScale)
-                y = 100 - Int(lastPoint.y) / Int(yScale)
+            x = Float(lastPoint.x) / Float(xScale)
+            y = 100 - Float(lastPoint.y) / Float(yScale)
                 arrayX.append(x)
                 arrayY.append(y)
-            }
+            
             lastPoint = currentPoint
         }
-        
+        }
     }
     //Function called if
     override func touchesEnded(_ touches: Set<UITouch>,
@@ -162,6 +164,7 @@ class GraphViewController: UIViewController {
         // or the line will disappear.
         if(isSwiping == true){
             if(lastPoint.x < 600){
+                message(message: "Please draw a valid line.", segue: false, toSegue: "", title: "Valid", cancel: false)
                 clear_screen()
             }
          
@@ -195,10 +198,10 @@ class GraphViewController: UIViewController {
     
     // function to draw the second line with data from the newX and newY arrays defined globally
     // will draw the same line every time
-    func draw(x: Int, y: Int){
+    func draw(x: Float, y: Float){
 //        = 600 + Int(lastPointGet.y) * Int(yScale)
-        let nx = x * Int(xScale)
-        let ny = y * Int(yScale)
+        let nx = CGFloat(x * Float(xScale))
+        let ny = CGFloat(y * Float(yScale))
         UIGraphicsBeginImageContext(self.imageView.frame.size)
         self.imageView.image?.draw(in: CGRect(x: 0, y: 0, width: self.imageView.frame.size.width, height: self.imageView.frame.size.height))
         UIGraphicsGetCurrentContext()?.move(to: CGPoint(x: lastPointGet.x, y: lastPointGet.y))
@@ -209,8 +212,8 @@ class GraphViewController: UIViewController {
         UIGraphicsGetCurrentContext()?.strokePath()
         self.imageView.image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        lastPointGet.x = CGFloat(x * Int(xScale))
-        lastPointGet.y = CGFloat(y * Int(yScale))
+        lastPointGet.x = CGFloat(x * Float(xScale))
+        lastPointGet.y = CGFloat(y * Float(yScale))
     }
 
     func reset() {

@@ -13,6 +13,7 @@
 		A86509501DF4CF2500A7C735 /* 3minGraph.png in Resources */ = {isa = PBXBuildFile; fileRef = A865094F1DF4CF2500A7C735 /* 3minGraph.png */; };
 		A889724B1DB44A40002B2B03 /* graph.png in Resources */ = {isa = PBXBuildFile; fileRef = A889724A1DB44A40002B2B03 /* graph.png */; };
 		A88CD2511DD5658A005C04EE /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88CD2501DD5658A005C04EE /* GraphViewController.swift */; };
+		A89CFA981DFA26DA0002B689 /* logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A89CFA971DFA26DA0002B689 /* logo.jpg */; };
 		A8D630521DB430E800E43D4A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D630511DB430E800E43D4A /* AppDelegate.swift */; };
 		A8D630541DB430E800E43D4A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D630531DB430E800E43D4A /* ViewController.swift */; };
 		A8D630571DB430E800E43D4A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8D630551DB430E800E43D4A /* Main.storyboard */; };
@@ -61,6 +62,7 @@
 		A865094F1DF4CF2500A7C735 /* 3minGraph.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3minGraph.png; sourceTree = SOURCE_ROOT; };
 		A889724A1DB44A40002B2B03 /* graph.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = graph.png; sourceTree = SOURCE_ROOT; };
 		A88CD2501DD5658A005C04EE /* GraphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphViewController.swift; sourceTree = "<group>"; };
+		A89CFA971DFA26DA0002B689 /* logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = logo.jpg; sourceTree = "<group>"; };
 		A8D6304E1DB430E800E43D4A /* Packetized Energy Tablet App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Packetized Energy Tablet App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8D630511DB430E800E43D4A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A8D630531DB430E800E43D4A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 		A8D630501DB430E800E43D4A /* Packetized Energy Tablet App */ = {
 			isa = PBXGroup;
 			children = (
+				A89CFA971DFA26DA0002B689 /* logo.jpg */,
 				A865094F1DF4CF2500A7C735 /* 3minGraph.png */,
 				A83AACE81DB5664E000769B0 /* graph.png */,
 				A889724A1DB44A40002B2B03 /* graph.png */,
@@ -267,6 +270,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A89CFA981DFA26DA0002B689 /* logo.jpg in Resources */,
 				A8D630831DB4315D00E43D4A /* logo.png in Resources */,
 				A86509501DF4CF2500A7C735 /* 3minGraph.png in Resources */,
 				A83AACE91DB5664E000769B0 /* graph.png in Resources */,

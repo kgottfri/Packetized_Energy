@@ -1,7 +1,7 @@
 //Lets require/import the HTTP module
 var http = require('http');
 
-var data = new Array("135", "236", "340");
+var dataArray = new Array("135", "236", "340");
 
 //Lets define a port we want to listen to
 const PORT=8080; 
@@ -38,8 +38,10 @@ function handleRequest(request, response){
 	    }
 
 	    else {
-		response.end
-		response.end(data[data]);
+		//response.end(data[parseInt(data, 10)]);
+		 response.end(dataArray[parseInt(data, 10)]);
+
+		//response.end("int parameter recieved");
 	    }
 
 	    

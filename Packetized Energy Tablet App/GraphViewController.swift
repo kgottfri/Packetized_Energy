@@ -7,7 +7,8 @@
 
 
 import UIKit
-class GraphViewController: UIViewController {
+class GraphViewController: UIViewController, UIPickerViewDataSource,UIPickerViewDelegate{
+
     
     //urlStr is url to connect to
     
@@ -21,7 +22,7 @@ class GraphViewController: UIViewController {
     let data = [2.3, 4.4, 5.6, 1.3, 2.2]
     let newX: [Float] = [1,2,5,6,7,10,15,20,50,100,120,170]
     let newY: [Float] = [44,55,36,37,50,66,74,66,56,57,51,44]
-    let xScale = CGFloat(5)
+    let xScale = CGFloat(9)
     let yScale = CGFloat(6)
     var x: Float = 0
     var y: Float = 0
@@ -29,11 +30,13 @@ class GraphViewController: UIViewController {
     var arrayX = [Float]()
     var arrayY = [Float]()
     var drawn = false
+    let pickerData = ["1","2","3","4","5","6","7","8","9","10"]
     
     @IBOutlet var imageView: UIImageView!
     @IBOutlet weak var Start: UIButton!
     @IBOutlet weak var tfField: UITextField!
     @IBOutlet weak var graphView: GraphViewController!
+    @IBOutlet weak var myPicker: UIPickerView!
     
     
     //use this message function to create a dialog box when necessary
@@ -42,6 +45,39 @@ class GraphViewController: UIViewController {
     //toSegue: the desired action to segue to.  can be function, UIViewController, or ""
     //title: desired title for the message box
     //cancel: do you want a cancel button on the dialog box
+    override func viewDidLoad() {
+        
+        super.viewDidLoad()
+        //message(message: "Please Draw A Valid Line", segue: false, toSegue: "", title: "Info", cancel: false)
+        //        updateChartWithData()
+        // Do any additional setup after loading the view.
+        red   = (0.0/255.0)
+        green = (0.0/255.0)
+        blue  = (0.0/255.0)
+        myPicker.dataSource = self
+    }
+    
+    //MARK: - Delegates and data sources
+    //MARK: Data Sources
+    @available(iOS 2.0, *)
+    public func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+//    func numberOfComponents(pickerView: UIPickerView) -> Int {
+//        return 1
+//    }
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return pickerData.count
+    }
+    
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
+        return pickerData[row]
+    }
+    
+//    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+//        //myLabel.text = pickerData[row]
+//    }
+    
     func message(message: String, segue: Bool, toSegue: String, title: String, cancel: Bool){
         
         let alert = UIAlertController(title:title, message: message, preferredStyle: UIAlertControllerStyle.alert )
@@ -79,18 +115,6 @@ class GraphViewController: UIViewController {
     }
     
     
-    override func viewDidLoad() {
-        
-        super.viewDidLoad()
-        //message(message: "Please Draw A Valid Line", segue: false, toSegue: "", title: "Info", cancel: false)
-        //        updateChartWithData()
-        // Do any additional setup after loading the view.
-        red   = (0.0/255.0)
-        green = (0.0/255.0)
-        blue  = (0.0/255.0)
-
-    }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -111,6 +135,7 @@ class GraphViewController: UIViewController {
             
     }
     
+
     // Creates a data point when the user first touches the screen
     override func touchesBegan(_ touches: Set<UITouch>,
                                with event: UIEvent?){

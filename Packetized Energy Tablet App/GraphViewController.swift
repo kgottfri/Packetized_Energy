@@ -20,8 +20,8 @@ class GraphViewController: UIViewController, UIPickerViewDataSource,UIPickerView
     var green:CGFloat!
     var blue:CGFloat!
     let data = [2.3, 4.4, 5.6, 1.3, 2.2]
-    let newX: [Float] = [1,2,5,6,7,10,15,20,50,100,120,170]
-    let newY: [Float] = [44,55,36,37,50,66,74,66,56,57,51,44]
+    var newX = [Float]()
+    var newY = [Float]()
     let xScale = CGFloat(9)
     let yScale = CGFloat(6)
     var x: Float = 0
@@ -37,8 +37,8 @@ class GraphViewController: UIViewController, UIPickerViewDataSource,UIPickerView
     @IBOutlet weak var tfField: UITextField!
     @IBOutlet weak var graphView: GraphViewController!
     @IBOutlet weak var myPicker: UIPickerView!
-    
-    
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var timeHalf: UILabel!
     //use this message function to create a dialog box when necessary
     //message: the message to be displayed in the box
     //segue: flag whether or not the action will call a function
@@ -47,17 +47,21 @@ class GraphViewController: UIViewController, UIPickerViewDataSource,UIPickerView
     //cancel: do you want a cancel button on the dialog box
     override func viewDidLoad() {
         
+
         super.viewDidLoad()
         //message(message: "Please Draw A Valid Line", segue: false, toSegue: "", title: "Info", cancel: false)
+        
         //        updateChartWithData()
         // Do any additional setup after loading the view.
         red   = (0.0/255.0)
         green = (0.0/255.0)
         blue  = (0.0/255.0)
         myPicker.dataSource = self
+        myPicker.delegate = self
     }
     
     //MARK: - Delegates and data sources
+
     //MARK: Data Sources
     @available(iOS 2.0, *)
     public func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -70,13 +74,19 @@ class GraphViewController: UIViewController, UIPickerViewDataSource,UIPickerView
         return pickerData.count
     }
     
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return pickerData[row]
     }
     
-//    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-//        //myLabel.text = pickerData[row]
-//    }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        timeLabel.text = pickerData[row]
+        let time = timeLabel.text
+        if(!(time?.isEmpty)!){
+            let half = (Float(time!)!/2)
+            timeHalf.text = String(half)
+        }
+        
+    }
     
     func message(message: String, segue: Bool, toSegue: String, title: String, cancel: Bool){
         
@@ -126,26 +136,39 @@ class GraphViewController: UIViewController, UIPickerViewDataSource,UIPickerView
     }
     // Calls the function to draw the second line labeled "done"
     @IBAction func Send(_ sender: AnyObject) {
+        var time = timeLabel.text;
         if(arrayX.isEmpty && arrayY.isEmpty){
             message(message: "Please Submit A valid drawing.", segue: false, toSegue: "", title: "Invalid Drawing", cancel: false)
         }
         else{
+            if(time?.isEmpty)!{
+                time = "1"
+            }
             message(message: "Are you sure you want to submit this drawing?", segue: true, toSegue: "get()", title: "Submit Drawing", cancel: true)
+            print(time)
         }
             
     }
     
-
+    
     // Creates a data point when the user first touches the screen
     override func touchesBegan(_ touches: Set<UITouch>,
                                with event: UIEvent?){
+        if(!drawn){
         isSwiping    = false
-        if let touch = touches.first{
+            if let touch = touches.first{
             lastPoint = touch.location(in: imageView)
-            x = Float(lastPoint.x) / Float(xScale)
-            y = 100 - Float(lastPoint.y) / Float(yScale)
-            arrayX.append(x)
-            arrayY.append(y)
+
+                if(lastPoint.x < 114){
+                    print(lastPoint.x)
+                    x = Float(lastPoint.x) / Float(xScale)
+                    print(x)
+                    y = 100 - Float(lastPoint.y) / Float(yScale)
+                    arrayX.append(x)
+                    arrayY.append(y)
+                    drawn = true
+                }
+            }
         }
     }
     
@@ -154,32 +177,34 @@ class GraphViewController: UIViewController, UIPickerViewDataSource,UIPickerView
     override func touchesMoved(_ touches: Set<UITouch>,
                                with event: UIEvent?){
         
-        isSwiping = true;
-        if(!drawn){
-        if let touch = touches.first{
+        
+        if(drawn){
+            isSwiping = true;
+            if let touch = touches.first{
             
-            currentPoint = touch.location(in: imageView)
-            if (currentPoint.x < lastPoint.x){
-                currentPoint.x = lastPoint.x
-            }
+                currentPoint = touch.location(in: imageView)
+                if (currentPoint.x < lastPoint.x){
+                    currentPoint.x = lastPoint.x
+                }
             
-            UIGraphicsBeginImageContext(self.imageView.frame.size)
-            self.imageView.image?.draw(in: CGRect(x: 0, y: 0, width: self.imageView.frame.size.width, height: self.imageView.frame.size.height))
-            UIGraphicsGetCurrentContext()?.move(to: CGPoint(x: lastPoint.x, y: lastPoint.y))
-            UIGraphicsGetCurrentContext()?.addLine(to: CGPoint(x: currentPoint.x, y: currentPoint.y))
-            UIGraphicsGetCurrentContext()?.setLineCap(CGLineCap.square)
-            UIGraphicsGetCurrentContext()?.setLineWidth(4.0)
-            UIGraphicsGetCurrentContext()?.setStrokeColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 1.0)
-            UIGraphicsGetCurrentContext()?.strokePath()
-            self.imageView.image = UIGraphicsGetImageFromCurrentImageContext()
-            UIGraphicsEndImageContext()
-            x = Float(lastPoint.x) / Float(xScale)
-            y = 100 - Float(lastPoint.y) / Float(yScale)
+                UIGraphicsBeginImageContext(self.imageView.frame.size)
+                self.imageView.image?.draw(in: CGRect(x: 0, y: 0, width: self.imageView.frame.size.width,   height: self.imageView.frame.size.height))
+                UIGraphicsGetCurrentContext()?.move(to: CGPoint(x: lastPoint.x, y: lastPoint.y))
+                UIGraphicsGetCurrentContext()?.addLine(to: CGPoint(x: currentPoint.x, y: currentPoint.y))
+                UIGraphicsGetCurrentContext()?.setLineCap(CGLineCap.square)
+                UIGraphicsGetCurrentContext()?.setLineWidth(4.0)
+                UIGraphicsGetCurrentContext()?.setStrokeColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 1.0)
+                UIGraphicsGetCurrentContext()?.strokePath()
+                self.imageView.image = UIGraphicsGetImageFromCurrentImageContext()
+                UIGraphicsEndImageContext()
+                x = Float(lastPoint.x) / Float(xScale)
+                y = 100 - Float(lastPoint.y) / Float(yScale)
                 arrayX.append(x)
                 arrayY.append(y)
             
-            lastPoint = currentPoint
-        }
+                lastPoint = currentPoint
+                drawn = true
+            }
         }
     }
     //Function called if
@@ -188,22 +213,28 @@ class GraphViewController: UIViewController, UIPickerViewDataSource,UIPickerView
         //Called if the line drawn is ended.  the value of the x point should be greater than 600 
         // or the line will disappear.
         if(isSwiping == true){
-            if(lastPoint.x < 600){
-                message(message: "Please draw a valid line.", segue: false, toSegue: "", title: "Valid", cancel: false)
-                clear_screen()
+            if(drawn){
+                if(lastPoint.x < 600){
+                    message(message: "Please draw a valid line.", segue: false, toSegue: "", title: "Valid", cancel: false)
+                    clear_screen()
+                }
+                else{
+                    isSwiping = false
+                }
             }
          
-//            else {
-//                //valid line drawn
-//
+            else {
+                //valid line drawn
 //                print("upload_request called")
-////                get()
-//            }
+//                get()
+            }
         }
         // go here if only one point is drawn(should just clear the graph)
         else if(!isSwiping) {
-            if(lastPoint.x < 600){
-                clear_screen()
+            if(!drawn){
+                if(lastPoint.x < 600){
+                    clear_screen()
+                }
             }
         }
         
@@ -216,11 +247,24 @@ class GraphViewController: UIViewController, UIPickerViewDataSource,UIPickerView
         print (lastPoint)
         lastPointGet = lastPoint //funky way of initializing the first point
         lastPointGet.x = CGFloat(arrayX[0]) // funky way of updating first x point (can be changed)
-        for index in 1..<newX.count{
-            draw(x: newX[index],y: newY[index])
+
+        for index in 0..<arrayX.count{
+            simDraw(index: index)
+//            Timer.scheduledTimer(timeInterval: TimeInterval(3), target: self, selector: #selector(GraphViewController.wait), userInfo: nil, repeats: false)
+            unowned let unownedSelf = self
+            
+            let deadlineTime = DispatchTime.now() + .seconds(2)
+            DispatchQueue.main.asyncAfter(deadline: deadlineTime, execute: {
+                unownedSelf.draw(x: self.newX[index],y: self.newY[index])
+            })
+            
         }
     }
     
+    func wait(){
+        var count = 0
+        count += 1
+    }
     // function to draw the second line with data from the newX and newY arrays defined globally
     // will draw the same line every time
     func draw(x: Float, y: Float){
@@ -240,11 +284,17 @@ class GraphViewController: UIViewController, UIPickerViewDataSource,UIPickerView
         lastPointGet.x = CGFloat(x * Float(xScale))
         lastPointGet.y = CGFloat(y * Float(yScale))
     }
-
+    func simDraw(index: Int){
+        x = arrayX[index]
+        y = arrayY[index]
+        newX.append(x)
+        let rand = Float32((Double(arc4random()) / 5) * (5 - 0))
+        newY.append(y - 1)
+    }
     func reset() {
         
-//        clear_screen()
-//        
+        clear_screen()
+//
 //        //send reset command
 //        var request = URLRequest(url: URL(string : urlStr)!)
 //        
@@ -275,11 +325,11 @@ class GraphViewController: UIViewController, UIPickerViewDataSource,UIPickerView
         
         var request = URLRequest(url: URL(string : urlStr)!)
         
-        var responseString = ""
+        let responseString = ""
         
         request.httpMethod = "POST"
         
-        var indexString = String(index)
+        let indexString = String(index)
         
         let task = URLSession.shared.uploadTask(with: request, from: indexString.data(using: String.Encoding.utf8)) { data, response, error in
             guard let data = data, error == nil else {   // check for fundamental networking error
@@ -312,7 +362,7 @@ class GraphViewController: UIViewController, UIPickerViewDataSource,UIPickerView
         lastPoint = nil
         arrayX.removeAll()
         arrayY.removeAll()
-        
+        drawn = false
 
     
     }

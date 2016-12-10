@@ -260,8 +260,9 @@ class GraphViewController: UIViewController, UIPickerViewDataSource,UIPickerView
             delay(2){
                 self.draw(x: self.newX[index],y: self.newY[index])
             }
-            postResponse(index: 1)
+            
         }
+        postResponse(index: 1)
     }
     
     func delay(_ delay:Double, closure:@escaping ()->()) {

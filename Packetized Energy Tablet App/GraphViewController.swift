@@ -260,7 +260,7 @@ class GraphViewController: UIViewController, UIPickerViewDataSource,UIPickerView
             delay(2){
                 self.draw(x: self.newX[index],y: self.newY[index])
             }
-            
+            postResponse(index: 1)
         }
     }
     
@@ -322,17 +322,18 @@ class GraphViewController: UIViewController, UIPickerViewDataSource,UIPickerView
 //        
 //        task.resume()
         
-        postResponse(index: 1)
+        
         
     }
     
-    func postResponse(index: Int) -> String {
+    func postResponse(index: Int) -> Array<Float> {
         
         var request = URLRequest(url: URL(string : urlStr)!)
         
         let responseString = ""
         
         request.httpMethod = "POST"
+        var servArray = [Float]()
         
         let indexString = String(index)
         
@@ -349,16 +350,19 @@ class GraphViewController: UIViewController, UIPickerViewDataSource,UIPickerView
             }
             
             var responseString = String(data: data, encoding: .utf8)!
+            let stringArray = responseString.characters.split{$0 == ","}.map(String.init)
+            servArray = stringArray.map { Float($0)!}
             //should be test array from server - NOT WORKING
-            print(responseString)
+            print(servArray)
         }
         
         task.resume()
         
-        return responseString
-
+        return servArray
+        
         
     }
+
     
 
     
@@ -399,7 +403,7 @@ class GraphViewController: UIViewController, UIPickerViewDataSource,UIPickerView
         let arrayYpost = arrayYstring.joined(separator: ",")
         
         //combine
-        let arraysPost = "X-VALUES: " + arrayXpost + " Y-VALUES: " + arrayYpost + "DATAEND"
+        let arraysPost = "X-VALUES:," + arrayXpost + ",Y-VALUES:," + arrayYpost + ",DATAEND"
         
         print(arraysPost)
         

@@ -1,56 +1,75 @@
 //Lets require/import the HTTP module
 var http = require('http');
 
-var dataArray = new Array("135", "236", "340");
+var dataArray = new Array();
 
 //Lets define a port we want to listen to
-const PORT=8080; 
+const PORT=8080;
 
 //We need a function which handles requests and send response
 function handleRequest(request, response){
-  
-
+    
+    
     if(request.method === 'GET') {
-
-	//console.log(request)
-	console.log('get')
-	response.end('confirmed');
-    }
-
-    if(request.method === 'POST') {
-
-	//console.log(request)
-	
-	console.log('post')
-	console.log(request.data)
-	//response.end('post worked ');
-
-	request.on('data', function(chunk) {
-	console.log("Received body data:");
-	    const data = chunk.toString();
-	    console.log(data);
-
-	    //If End of Data: send back array to test
-	    if (data.substring(data.length - 7) ==='DATAEND') {
-
-		console.log("recognized end of data");
-	    
-	    }
-
-	    else {
-		//response.end(data[parseInt(data, 10)]);
-		 response.end(dataArray[parseInt(data, 10)]);
-
-		//response.end("int parameter recieved");
-	    }
-
-	    
-
-    });
-	
+        
+        //console.log(request)
+        console.log('get')
+        response.end('confirmed');
     }
     
-	
+    if(request.method === 'POST') {
+        
+        //console.log(request)
+        
+        console.log('post')
+        console.log(request.data)
+        //response.end('post worked ');
+        
+        request.on('data', function(chunk) {
+                   console.log("Received body data:");
+                   const data = chunk.toString();
+                   console.log(data);
+                   
+                   //If End of Data: send back array to test
+                   if (data.substring(data.length - 7) ==='DATAEND') {
+                   
+                   console.log("recognized end of data");
+                   
+                   dataArray = data.split(",");
+                   dataArray.splice(0,(dataArray.length/2)+1);
+                   dataArray.pop();
+                   dataArray=dataArray.map(Number);
+                   
+                   for (i = 0; i < dataArray.length ; i++)
+                   {
+                   var rand = (Math.random() -  1)*7;
+                   dataArray[i]=dataArray[i]+rand;
+                   dataArray[i]=dataArray[i].toFixed(2);
+                   
+                   }
+                   
+                   dataArray=dataArray.toString();
+                   console.log(dataArray);
+                   
+                   
+                   }
+                   
+                   else {
+                   //response.end(data[parseInt(data, 10)]);
+                   console.log(dataArray)
+                   console.log("please work")
+                   response.end(dataArray);
+                   
+                   //response.end("int parameter recieved");
+                   }
+                   
+                   
+                   
+                   });
+        
+    }
+    
+    
 }
 
 
@@ -59,11 +78,12 @@ var server = http.createServer(handleRequest);
 
 //Lets start our server
 server.listen(PORT, function(){
-    //Callback triggered when server is successfully listening. Hurray!
-    console.log(server.address());
-    console.log("Server listening on: http://localhost:%s", PORT);
-    console.log(server.address().address);
+              //Callback triggered when server is successfully listening. Hurray!
+              console.log(server.address());
+              console.log("Server listening on: http://localhost:%s", PORT);
+              console.log(server.address().address);
+              
+              
+              
+              });
 
-    
-    
-});

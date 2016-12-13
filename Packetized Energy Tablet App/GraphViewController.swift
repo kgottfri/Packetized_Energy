@@ -32,6 +32,7 @@ class GraphViewController: UIViewController, UIPickerViewDataSource,UIPickerView
     var drawn = false
     let pickerData = ["1","2","3","4","5","6","7","8","9","10"]
     let deadlineTime = DispatchTime.now() + .seconds(2)
+    var servArray = [Float]()
     @IBOutlet var imageView: UIImageView!
     @IBOutlet weak var Start: UIButton!
     @IBOutlet weak var tfField: UITextField!
@@ -247,9 +248,12 @@ class GraphViewController: UIViewController, UIPickerViewDataSource,UIPickerView
         print (lastPoint)
         lastPointGet = lastPoint //funky way of initializing the first point
         lastPointGet.x = CGFloat(arrayX[0]) // funky way of updating first x point (can be changed)
-
-        for index in 0..<arrayX.count{
-            simDraw(index: index)
+        postResponse(index: 1)
+        print(servArray.count)
+        for count in 0..<servArray.count{
+            draw(x: self.arrayX[count], y: self.servArray[count])
+        }
+//            simDraw(index: index)
 //            Timer.scheduledTimer(timeInterval: TimeInterval(3), target: self, selector: #selector(GraphViewController.wait), userInfo: nil, repeats: false)
 //            unowned let unownedSelf = self
 //            
@@ -257,12 +261,12 @@ class GraphViewController: UIViewController, UIPickerViewDataSource,UIPickerView
 //            DispatchQueue.main.asyncAfter(deadline: deadlineTime, execute: {
 //                unownedSelf.draw(x: self.newX[index],y: self.newY[index])
 //            })
-            delay(2){
-                self.draw(x: self.newX[index],y: self.newY[index])
-            }
+//            delay(2){
+//                self.draw(x: self.newX[index],y: self.newY[index])
+//            }
             
-        }
-        postResponse(index: 1)
+        
+
     }
     
     func delay(_ delay:Double, closure:@escaping ()->()) {
@@ -327,17 +331,17 @@ class GraphViewController: UIViewController, UIPickerViewDataSource,UIPickerView
         
     }
     
-    func postResponse(index: Int) -> Array<Float> {
+    func postResponse(index: Int) {
         
         var request = URLRequest(url: URL(string : urlStr)!)
         
         let responseString = ""
         
         request.httpMethod = "POST"
-        var servArray = [Float]()
+//        var servArray = [Float]()
         
         let indexString = String(index)
-        
+        let semaphore = DispatchSemaphore(value: 0)
         let task = URLSession.shared.uploadTask(with: request, from: indexString.data(using: String.Encoding.utf8)) { data, response, error in
             guard let data = data, error == nil else {   // check for fundamental networking error
                 print("Can not connect to the server")
@@ -352,14 +356,17 @@ class GraphViewController: UIViewController, UIPickerViewDataSource,UIPickerView
             
             var responseString = String(data: data, encoding: .utf8)!
             let stringArray = responseString.characters.split{$0 == ","}.map(String.init)
-            servArray = stringArray.map { Float($0)!}
+            self.servArray = stringArray.map { Float($0)!}
             //should be test array from server - NOT WORKING
-            print(servArray)
+            print(self.servArray)
+            print("222222")
+            semaphore.signal()
         }
+            task.resume()
+        semaphore.wait(timeout: .distantFuture)
+//        task.resume()
         
-        task.resume()
         
-        return servArray
         
         
     }

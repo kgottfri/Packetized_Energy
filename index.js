@@ -52,10 +52,16 @@ function handleRequest(request, response){
                    }
                    
                    
-                   console.log(dataArray);
+                   //console.log(dataArray);
                    
                    
                    }
+
+	if (data === ‘RESET’) {
+
+	console.log(‘reset command recieved’);
+
+}
                    
                    else {
                    //response.end(data[parseInt(data, 10)]);
@@ -64,12 +70,16 @@ function handleRequest(request, response){
                    
                    }
                    sendArray=sendArray.toString();
-                   console.log(sendArray);
+                   //console.log(sendArray);
                    response.end(sendArray);
                    count++;
                    
                    //response.end("int parameter recieved");
                    }
+
+    		
+
+
                    
                    
                    

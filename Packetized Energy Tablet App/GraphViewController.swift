@@ -379,6 +379,7 @@ class GraphViewController: UIViewController, UIPickerViewDataSource,UIPickerView
         lastPoint = nil
         arrayX.removeAll()
         arrayY.removeAll()
+        servArray.removeAll()
         newX.removeAll()
         newY.removeAll()
         drawn = false

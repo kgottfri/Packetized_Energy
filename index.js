@@ -3,7 +3,7 @@ var http = require('http');
 
 var dataArray = new Array();
 var sendArray = new Array();
-var count = 4;
+//var count = 4;
 
 
 //Lets define a port we want to listen to
@@ -50,40 +50,32 @@ function handleRequest(request, response){
                    dataArray[i]=dataArray[i].toFixed(2);
                    
                    }
-                   
+                   dataArray=dataArray.toString();
                    
                    //console.log(dataArray);
                    
                    
                    }
 
-	if (data === ‘RESET’) {
+	else if (data === 'RESET') {
 
-	console.log(‘reset command recieved’);
+	console.log('reset command recieved');
 
-}
+        }
                    
-                   else {
-                   //response.end(data[parseInt(data, 10)]);
-                   for (i = 0; i < count ; i++){
-                   sendArray[i]=dataArray[i];
+        else {
                    
-                   }
-                   sendArray=sendArray.toString();
-                   //console.log(sendArray);
-                   response.end(sendArray);
-                   count++;
+	    response.end(dataArray);
                    
-                   //response.end("int parameter recieved");
-                   }
-
+                    dataArray = []
     		
 
 
                    
                    
-                   
+                   }
                    });
+                   
         
     }
     

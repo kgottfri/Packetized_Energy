@@ -10,10 +10,10 @@
 		69F888861DD506110083719F /* ConnectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F888851DD506110083719F /* ConnectViewController.swift */; };
 		A8267BD21DE3562F00E82522 /* Draw.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8267BD11DE3562F00E82522 /* Draw.swift */; };
 		A83AACE91DB5664E000769B0 /* graph.png in Resources */ = {isa = PBXBuildFile; fileRef = A83AACE81DB5664E000769B0 /* graph.png */; };
-		A850DFB11DFF903000730555 /* varyingGraph.png in Resources */ = {isa = PBXBuildFile; fileRef = A850DFB01DFF903000730555 /* varyingGraph.png */; };
 		A86509501DF4CF2500A7C735 /* 3minGraph.png in Resources */ = {isa = PBXBuildFile; fileRef = A865094F1DF4CF2500A7C735 /* 3minGraph.png */; };
 		A889724B1DB44A40002B2B03 /* graph.png in Resources */ = {isa = PBXBuildFile; fileRef = A889724A1DB44A40002B2B03 /* graph.png */; };
 		A88CD2511DD5658A005C04EE /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88CD2501DD5658A005C04EE /* GraphViewController.swift */; };
+		A8915FC81E00389B00DEEE9E /* varyingGraph.png in Resources */ = {isa = PBXBuildFile; fileRef = A8915FC71E00389B00DEEE9E /* varyingGraph.png */; };
 		A89CFA981DFA26DA0002B689 /* logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A89CFA971DFA26DA0002B689 /* logo.jpg */; };
 		A8D630521DB430E800E43D4A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D630511DB430E800E43D4A /* AppDelegate.swift */; };
 		A8D630541DB430E800E43D4A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D630531DB430E800E43D4A /* ViewController.swift */; };
@@ -60,10 +60,10 @@
 		69F888851DD506110083719F /* ConnectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectViewController.swift; sourceTree = "<group>"; };
 		A8267BD11DE3562F00E82522 /* Draw.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Draw.swift; sourceTree = "<group>"; };
 		A83AACE81DB5664E000769B0 /* graph.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = graph.png; sourceTree = SOURCE_ROOT; };
-		A850DFB01DFF903000730555 /* varyingGraph.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = varyingGraph.png; path = "../../../../Downloads/cs-tablet-app/varyingGraph.png"; sourceTree = "<group>"; };
 		A865094F1DF4CF2500A7C735 /* 3minGraph.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3minGraph.png; sourceTree = SOURCE_ROOT; };
 		A889724A1DB44A40002B2B03 /* graph.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = graph.png; sourceTree = SOURCE_ROOT; };
 		A88CD2501DD5658A005C04EE /* GraphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphViewController.swift; sourceTree = "<group>"; };
+		A8915FC71E00389B00DEEE9E /* varyingGraph.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = varyingGraph.png; path = "../../../../Downloads/cs-tablet-app-hey/Packetized Energy Tablet App/varyingGraph.png"; sourceTree = "<group>"; };
 		A89CFA971DFA26DA0002B689 /* logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = logo.jpg; sourceTree = "<group>"; };
 		A8D6304E1DB430E800E43D4A /* Packetized Energy Tablet App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Packetized Energy Tablet App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8D630511DB430E800E43D4A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -128,7 +128,7 @@
 		A8D630501DB430E800E43D4A /* Packetized Energy Tablet App */ = {
 			isa = PBXGroup;
 			children = (
-				A850DFB01DFF903000730555 /* varyingGraph.png */,
+				A8915FC71E00389B00DEEE9E /* varyingGraph.png */,
 				A89CFA971DFA26DA0002B689 /* logo.jpg */,
 				A865094F1DF4CF2500A7C735 /* 3minGraph.png */,
 				A83AACE81DB5664E000769B0 /* graph.png */,
@@ -275,7 +275,7 @@
 			files = (
 				A89CFA981DFA26DA0002B689 /* logo.jpg in Resources */,
 				A8D630831DB4315D00E43D4A /* logo.png in Resources */,
-				A850DFB11DFF903000730555 /* varyingGraph.png in Resources */,
+				A8915FC81E00389B00DEEE9E /* varyingGraph.png in Resources */,
 				A86509501DF4CF2500A7C735 /* 3minGraph.png in Resources */,
 				A83AACE91DB5664E000769B0 /* graph.png in Resources */,
 				A8D6305F1DB430E800E43D4A /* LaunchScreen.storyboard in Resources */,

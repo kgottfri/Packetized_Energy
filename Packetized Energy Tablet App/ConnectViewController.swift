@@ -47,7 +47,7 @@ class ConnectViewController: UIViewController {
         request.httpMethod = "GET"
 //        let postString = "THISISATEST"
 //        request.httpBody = postString.data(using: .utf8)
-        
+        let semaphore = DispatchSemaphore(value: 0)
         //get code (recieves "confirmed" from server):
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data, error == nil else {   // check for fundamental networking error
@@ -59,19 +59,19 @@ class ConnectViewController: UIViewController {
                 print("statusCode should be 200, but is \(httpStatus.statusCode)")
                 print("response = \(response)")
             }
-            
+            semaphore.signal()
             self.serverConfirmation = String(data: data, encoding: .utf8)!
             
             //go to next screen if serverConfirmation = "confirmed"
-            if self.serverConfirmation != "confirmed" {
-                
+            if self.serverConfirmation == "confirmed" {
+                OperationQueue.main.addOperation {
+                    self.performSegue(withIdentifier: "ConnectSegue", sender: nil)
+                }
                 
             }
             else {
                 
-                OperationQueue.main.addOperation {
-                    self.performSegue(withIdentifier: "ConnectSegue", sender: nil)
-                }
+
             }
             
                         

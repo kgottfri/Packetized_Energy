@@ -364,7 +364,6 @@ class GraphViewController: UIViewController, UIPickerViewDataSource,UIPickerView
         }
             task.resume()
         semaphore.wait(timeout: .distantFuture)
-//        task.resume()
         
         
         

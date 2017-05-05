@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "3FD6382B8EDBC4957097A0BA9D0099FCC7589458",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "B2BEA5E92A1FBEE554CDA7F65C25E02B9E1C25AF" : 9223372036854775807,
+    "3FD6382B8EDBC4957097A0BA9D0099FCC7589458" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "E79FA262-B8DB-4A54-A476-CFEC57ADB424",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "B2BEA5E92A1FBEE554CDA7F65C25E02B9E1C25AF" : "..\/..\/Downloads\/cs-tablet-app-hey",
+    "3FD6382B8EDBC4957097A0BA9D0099FCC7589458" : "cs-tablet-app\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Packetized Energy Tablet App",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Packetized Energy Tablet App.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/packetizedenergy\/cs-tablet-app.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "3FD6382B8EDBC4957097A0BA9D0099FCC7589458"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/packetizedenergy\/cs-tablet-app",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "B2BEA5E92A1FBEE554CDA7F65C25E02B9E1C25AF"
+    }
+  ]
+}
